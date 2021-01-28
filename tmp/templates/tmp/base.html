@@ -1,0 +1,82 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{%static 'tmp/jquery.js' %}"></script>
+    <script src="{%static 'tmp/page.js' %}"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="{% static'tmp/page.css'%}">
+    {% block head %} {% endblock %}
+    <title>{%block title%} {% endblock %} </title>
+</head>
+
+<body>
+    <div class="nav">
+        <button>logo...</button>
+        <a href="#"><button class="btn">Home</button></a>
+        <a href="#"><button class="btn">Courses</button></a>
+        <a href="#"><button class="btn">Story/Blogs</button></a>
+        <a href="#"><button class="btn">Buy Courses</button></a>
+        <a href="#"><button class="btn">Contact us</button></a>
+        <button class="icon"><i class="fas fa-bars"></i></button>
+        <a href="#"><button class="login">Login</button></a>
+        <a href="#"><button class="sign">Sign Up</button></a>
+        <div class="togle" id="togle">
+            <li><a href="#"><button class="btn1">Home</button></a></li>
+            <li><a href="#"><button class="btn1">Courses</button></a></li>
+            <li><a href="#"><button class="btn1">Story/Blogs</button></a></li>
+            <li><a href="#"><button class="btn1">Buy Courses</button></a></li>
+            <li><a href="#"><button class="btn1">Contact Us</button></a></li>
+        </div>
+    </div>
+    {% block body %} {%endblock%}
+    <div class="lower">
+        <div class="lowerleft">
+            <ul class="llist">
+                <li class="lhead"> Courses</li>
+                <li>ahsjhskhoih</li>
+                <li>ahsjhskhoih</li>
+                <li>ahsjhskhoih</li>
+                <li>ahsjhskhoih</li>
+            </ul>
+            <ul class="llist">
+                <li class="lhead">Mock Tests</li>
+                <li>ahsjhskhoih</li>
+                <li>ahsjhskhoih</li>
+                <li>ahsjhskhoih</li>
+                <li>ahsjhskhoih</li>
+            </ul>
+            <ul class="llist">
+                <li class="lhead">Organization</li>
+                <li>ahsjhskhoih</li>
+                <li>ahsjhskhoih</li>
+                <li>ahsjhskhoih</li>
+                <li>ahsjhskhoih</li>
+            </ul>
+        </div>
+        <div class="lowerright">
+            <i class="fas fa-check-square fa-5x"></i><br>
+            <b>Fully Secured and verified</b>
+        </div>
+    </div>
+    <div class="llf">
+        <div class="lf">
+            <form action="#">
+                <label for="uid">Subscribe for NewsLetter</label><br>
+                <input type="mail" name="uid" id="uid" placeholder="Enter Your Email Id">
+            </form>
+        </div>
+        <div class="lows">
+            Follow us on
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
