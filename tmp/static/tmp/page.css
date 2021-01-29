@@ -8,11 +8,11 @@ body{
     background-image: radial-gradient(circle closest-side at bottom, green , white);
 }
 .nav{
-    background-color:  white;
+    background-color:  #368F8B;
     list-style: none;
     display: block;
     width: auto;
-    height: auto;
+    height: 2.5rem;
     border-style: none;
     margin: 0;
     padding-bottom: 10px ;
@@ -59,12 +59,13 @@ button:hover{
     display: block;
 }
 .upper{
-    background-color: rgba(116, 224, 188, 0.781);
-    background-image:radial-gradient(circle 88vh at 89vh -40vh,  rgba(86, 203, 211, 0.781) 95% , transparent);
+    background-color: #368F8B;
+    /*background-image:radial-gradient(circle 88vh at 89vh -40vh,  rgba(86, 203, 211, 0.781) 95% , transparent);*/
     display: inline-block;
+    opacity:0.75;
     margin: 0;
     width: 100%;
-    height: auto;
+    height: 30rem;
     animation: upperanimation 5s linear 2s infinite normal both;
 }
 @keyframes upperanimation{
@@ -82,18 +83,21 @@ button:hover{
 .detail2{
     display: inline-block;
     width: 66%;
+    margin-left:35px;
 }
 .cc , .hur{
-    color :rgba(218, 142, 99, 0.781)
+    color :rgba(218, 142, 99, 0.781);
+
+
 }
 .cc{
-    font-size:40px;
+    font-size:80px;
 }
 .hur{
-    font-size:30px;
+    font-size:50px;
 }
 .mem{
-    border-style: solid;
+
     text-decoration: none;
     background-color:rgba(218, 142, 99, 0.781);
     border-radius: 10px;
@@ -113,6 +117,7 @@ table{
 }
 td{
     width: 50vh;
+    height:12vh;
     text-align:center;
     border-style:solid;
     border-width: 2px;
@@ -121,9 +126,9 @@ td{
     width: 80%;
     list-style: none;
     display: inline-flex;
-    background-color: white;
+    background-color: #368F8B;
     border-radius: 10px;
-    margin:2% 8%;
+    margin:5% 8%;
 }
 
 .list1 li{
@@ -152,7 +157,7 @@ td{
     display: block;
     width: 50%;
     margin: auto;
-    margin-top:2%;
+    margin-top:-10%;
 }
 .head2{
     display: block;
@@ -176,13 +181,16 @@ td{
 .sub1{
     display: inline-block;
     text-align: center;
+
 }
 .sub2{
     width: 45%;
     background-image: radial-gradient(circle 15vh at 16vh 15vh,rgba(118, 73, 223, 0.836)95%,transparent),radial-gradient(circle 27vh at 31vh,rgba(218, 142, 99, 0.781) 95% , transparent );
 }
 .sub3{
-    width: 50%
+    width: 50%;
+
+
 }
 .MP img{
     border-style: solid;
@@ -248,11 +256,11 @@ td{
 }
 .lower{
     display: block;
-    margin-top: 4%;
+    margin-top: -5px;
 }
 .lhead{
     list-style: none;
-    margin-bottom:2%;
+    margin-bottom: 2%;
     font-weight: bold;
 }
 .llist{

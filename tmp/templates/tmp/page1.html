@@ -1,17 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="jquery.js" ></script>
-    <script src="page.js" ></script>
+    {%load static%}
+    <script src="{%static 'tmp/jquery.js' %}"></script>
+    {%load static%}
+    <script src="{%static 'tmp/page.js' %}"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="page.css">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'tmp/page.css' %}">
     <title>home page </title>
 </head>
 
-<body>
+<body style="margin: 0;padding: 0">
     <div class="nav">
         <button>logo...</button>
         <a href="#"><button class="btn">Home</button></a>
@@ -65,7 +69,9 @@
                 <li><i class="fas fa-bug icon2"></i><br><span id="span4">157</span><br><span>Coffee With Clients</span>
                 </li>
             </div>
+
         </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#368F8B" fill-opacity="0.75" d="M0,96L60,90.7C120,85,240,75,360,58.7C480,43,600,21,720,21.3C840,21,960,43,1080,48C1200,53,1320,43,1380,37.3L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg></div>
         <div class="middle">
             <div class="head1">
                 Some Text About Courses
@@ -91,24 +97,25 @@
             <div class="head3">
                 <div class="sub1 sub2">
                     <span class="MP">
-                        <img src="{ %static 'tmp/Run__001.png' %}" alt="Motivational picture">
+                            {%load static%}
+                        <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture">
                     </span>
                 </div>
                 <div class="sub1 sub3">
-                    <h1>Motivational Heading</h1><br><br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi necessitatibus nesciunt, eos ipsa
+                    <h1 style="margin-top:50px" >Motivational Heading</h1><br><br>
+                    <p style="margin-top:-20px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi necessitatibus nesciunt, eos ipsa
                     od
                     io itaque facilis. Sed ipsam neque culpa expedita, autem, sint voluptatem quia iure nam dolorem
-                    omnis molestiae?
+                        omnis molestiae?</p>
                     <br><br>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, saepe qui corporis, architecto
+                    <p style="margin-bottom:180px">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, saepe qui corporis, architecto
                     quibusdam facere
                     dolorem ullam impedit rerum asperiores earum ut autem, voluptas cumque. Nobis necessitatibus
-                    voluptatibus fugit ab!
+                        voluptatibus fugit ab!
                     <br><br>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptatum sapiente iure
                     consequuntur delectus, eligendi assumenda, cupiditate eos harum, expedita vel at deleniti ipsa
-                    dolorem! Quis, similique asperiores. Quasi, accusamus.
+                        dolorem! Quis, similique asperiores. Quasi, accusamus.</p>
                 </div>
             </div>
             <div class="head4">
@@ -122,6 +129,8 @@
                 </div>
             </div>
         </div>
+
+<div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100"><path fill="#368F8B" fill-opacity="1" d="M0,96L60,90.7C120,85,240,75,360,58.7C480,43,600,21,720,21.3C840,21,960,43,1080,48C1200,53,1320,43,1380,37.3L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg></div><div style="background-color:#368F8B;height:12rem">
         <div class="lower">
             <div class="lowerleft">
                 <ul class="llist">
@@ -165,6 +174,7 @@
                 <i class="fab fa-twitter" ></i>
             </div>
         </div>
+    </div>
     </div>
 </body>
 

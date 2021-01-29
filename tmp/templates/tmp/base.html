@@ -5,9 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
     <script src="{%static 'tmp/jquery.js' %}"></script>
+    {%load static%}
     <script src="{%static 'tmp/page.js' %}"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    {%load static%}
     <link rel="stylesheet" href="{% static'tmp/page.css'%}">
     {% block head %} {% endblock %}
     <title>{%block title%} {% endblock %} </title>
@@ -77,6 +80,8 @@
         </div>
     </div>
     </div>
+<div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100"><path fill="#368F8B" fill-opacity="1" d="M0,96L60,90.7C120,85,240,75,360,58.7C480,43,600,21,720,21.3C840,21,960,43,1080,48C1200,53,1320,43,1380,37.3L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">hellozdmbzdb</path></svg></div><div style="background-color:#368F8B;height:10rem"></div>
+
 </body>
 
 </html>
