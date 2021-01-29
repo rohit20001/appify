@@ -8,7 +8,7 @@
     <script src="{%static 'tmp/jquery.js' %}"></script>
     <script src="{%static 'tmp/page.js' %}"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="{% static'tmp/page.css'%}">
+    <link rel="stylesheet" href="{% static'tmp/page.css'%}">{%load static%}
     {% block head %} {% endblock %}
     <title>{%block title%} {% endblock %} </title>
 </head>
