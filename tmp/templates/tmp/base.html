@@ -18,7 +18,7 @@
 
 <body>
     <div class="nav">
-        <button>logo...</button>
+        <div class="logo"><img src="{% static 'tmp/media/Logo.png'%}" alt="logo here"></div>
         <a href="#"><button class="btn">Home</button></a>
         <a href="#"><button class="btn">Courses</button></a>
         <a href="#"><button class="btn">Story/Blogs</button></a>
@@ -36,6 +36,12 @@
         </div>
     </div>
     {% block body %} {%endblock%}
+    <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
+            <path fill="#368F8B" fill-opacity="1"
+                d="M0,96L60,90.7C120,85,240,75,360,58.7C480,43,600,21,720,21.3C840,21,960,43,1080,48C1200,53,1320,43,1380,37.3L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                hellozdmbzdb</path>
+                <div style="background-color:#368F8B;margin-bottom:-1%"></div>
+        </svg></div>
     <div class="lower">
         <div class="lowerleft">
             <ul class="llist">
@@ -80,7 +86,7 @@
         </div>
     </div>
     </div>
-<div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100"><path fill="#368F8B" fill-opacity="1" d="M0,96L60,90.7C120,85,240,75,360,58.7C480,43,600,21,720,21.3C840,21,960,43,1080,48C1200,53,1320,43,1380,37.3L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">hellozdmbzdb</path></svg></div><div style="background-color:#368F8B;width: 100%; height: auto; margin:0px; margin-top:-1px"></div>
+    
 
 </body>
 

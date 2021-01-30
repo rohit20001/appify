@@ -8,6 +8,16 @@ body{
     display: block;
     background-image: radial-gradient(circle closest-side at bottom, green , white);
 }
+.logo{
+    width: 10%;
+    height: auto;
+    display: inline-block;
+    background-color: white;
+}
+.logo img{
+     width: 100%;
+    margin: 0;
+}
 .nav{
     background-color:  #368F8B;
     list-style: none;
@@ -133,12 +143,12 @@ button:hover{
     75% {background:linear-gradient(rgba(13, 238, 31, 0.199),rgba(126, 137, 170, 0.781),rgba(31, 26, 30, 0.781));}
 }
 .list1{
-    width: 80%;
+    width: 100%;
     list-style: none;
     display: inline-flex;
     background-color: #368F8B;
     border-radius: 10px;
-    margin:5% 8%;
+    margin:5% 0%;
 }
 
 .list1 li{
@@ -266,7 +276,7 @@ button:hover{
 }
 .lower{
     display: block;
-    margin-top: -5px;
+    background-color: #368F8B;
 }
 .lhead{
     list-style: none;
