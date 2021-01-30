@@ -18,15 +18,16 @@
 
 <body>
     <div class="nav">
-        <div class="logo"><img src="{% static 'tmp/media/Logo.png'%}" alt="logo here"></div>
-        <a href="#"><button class="btn">Home</button></a>
+        <div style="height:100%;width:auto;margin-left:1%" class="logo"><img src="{% static 'tmp/media/Logo.png'%}" alt="logo here" height="90%"></div>
+        <a href="{% url 'page1' %}"><button class="btn">Home</button></a>
         <a href="#"><button class="btn">Courses</button></a>
-        <a href="#"><button class="btn">Story/Blogs</button></a>
-        <a href="#"><button class="btn">Buy Courses</button></a>
+        <a href="#"><button class="btn">Story</button></a>
+        <a href="{% url 'blog' %}"><button class="btn">Blogs</button></a>
+        <a href="{% url 'projects' %}"><button class="btn">Projects</button></a>
         <a href="#"><button class="btn">Contact us</button></a>
         <button class="icon"><i class="fas fa-bars"></i></button>
-        <a href="#"><button class="login">Login</button></a>
-        <a href="#"><button class="sign">Sign Up</button></a>
+        <a href="#"><button style="margin-top:1.3rem" class="login">Login</button></a>
+        <a href="#"><button style="margin-top:1.3rem" class="sign">Sign Up</button></a>
         <div class="togle" id="togle">
             <li><a href="#"><button class="btn1">Home</button></a></li>
             <li><a href="#"><button class="btn1">Courses</button></a></li>
@@ -44,21 +45,29 @@
         </svg></div>
     <div class="lower">
         <div class="lowerleft">
-            <ul class="llist">
+            <ul style="margin-left:4rem" class="llist">
                 <li class="lhead"> Courses</li>
                 <li>ahsjhskhoih</li>
                 <li>ahsjhskhoih</li>
                 <li>ahsjhskhoih</li>
                 <li>ahsjhskhoih</li>
             </ul>
-            <ul class="llist">
+            <ul style="margin-left:4rem" class="llist">
                 <li class="lhead">Mock Tests</li>
                 <li>ahsjhskhoih</li>
                 <li>ahsjhskhoih</li>
                 <li>ahsjhskhoih</li>
                 <li>ahsjhskhoih</li>
             </ul>
-            <ul class="llist">
+            <ul style="margin-left:4rem" class="llist">
+                <li class="lhead">Services</li>
+                <li>Blogs</li>
+                <li>Projects</li>
+                <li>Story</li>
+                <li>Trending</li>
+
+            </ul>
+            <ul style="margin-left:4rem" class="llist">
                 <li class="lhead">Organization</li>
                 <li>ahsjhskhoih</li>
                 <li>ahsjhskhoih</li>
@@ -66,19 +75,20 @@
                 <li>ahsjhskhoih</li>
             </ul>
         </div>
-        <div class="lowerright">
+        <div style="float:right" class="lowerright">
             <i class="fas fa-check-square fa-5x"></i><br>
             <b>Fully Secured and verified</b>
         </div>
-    </div>
-    <div class="llf">
+        <div class="llf">
         <div class="lf">
             <form action="#">
                 <label for="uid">Subscribe for NewsLetter</label><br>
-                <input type="mail" name="uid" id="uid" placeholder="Enter Your Email Id">
+                <input type="mail" name="uid" id="uid" placeholder="Enter Your Email Id">&nbsp;
+                <input type="button" name="uid1" id="uid1" value="Submit" style="background-color:#DDBEA8">
+
             </form>
         </div>
-        <div class="lows">
+        <div style="margin-right:6rem" class="lows">
             Follow us on
             <i class="fab fa-facebook-f"></i>
             <i class="fab fa-instagram"></i>
@@ -86,7 +96,9 @@
         </div>
     </div>
     </div>
-    
+
+    </div>
+
 
 </body>
 

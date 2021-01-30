@@ -1,0 +1,104 @@
+{%extends 'tmp/base.html' %}
+{% block head%}{%load static%}
+    <link rel="stylesheet" href="{% static 'tmp/blog.css' %}">
+{%endblock%}
+{% block title %} Blog {%endblock%}
+{% block body %}
+
+<div class="center" class="containerk" >
+    <div class="flex">
+        <div class="sameRow1"><span style="font-size:60px;"> New blog will appear<br> here<hr width="80%" align="left"></span>
+            <div class="upperpara"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam culpa cupiditate, eum id incidunt ipsum minus molestias nobis obcaecati odio optio pariatur quia similique veniam. Blanditiis, odio, temporibus. Rerum.
+            </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet deleniti dicta doloribus esse ex in laudantium maiores non obcaecati omnis quaerat, sequi sint voluptates voluptatum!</p>
+                {%load static%}
+                        <img src="{% static 'tmp/new.jpg' %}" alt="Motivational picture" width="560rem" height="420rem" class="centerimage" style="margin-top:3rem;margin-bottom:3rem">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam culpa cupiditate, eum id incidunt ipsum minus molestias nobis obcaecati odio optio pariatur quia similique veniam. Blanditiis, odio, temporibus. Rerum.
+            </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet deleniti dicta doloribus esse ex in laudantium maiores non obcaecati omnis quaerat, sequi sint voluptates voluptatum!</p>
+            </div>
+            <div style="margin-top:3%">
+                Share on these platforms
+                <i class="fab fa-facebook-f" ></i>
+                <i class="fab fa-instagram" ></i>
+                <i class="fab fa-twitter" ></i>
+                 <span style="float:right">Like</span>
+            </div>
+            <div class="boxHead" style="margin-top:2rem;margin-left:0"><b>About the Author</b></div>
+            <hr width="80%" align="left" style="height:2px;border-width:0;color:gray;background-color:gray">
+            <div style="margin-left:0;margin-top:3rem" class="containerk">
+                <div class="flex">
+                    <div style="width: 30%" class="sameRow1">
+                        {%load static%}
+                        <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture" width="250rem" height="190rem" >
+                    </div>
+                    <div style="width: 70%" class="sameRow2"><h2 style="margin-left:4%;">Name</h2><p style="margin-left:4%;">Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt harum ipsa magni molestiae quis quo! Aliquam architecto asperiores deserunt doloribus ea eveniet ex facilis fugit illo in, iste minus modi necessitatibus nihil non nostrum obcaecati odit officia omnis porro quam quas quidem quisquam quod quos saepe sapiente sequi temporibus! dolor sit amet, consectetur adipisicing elit. Cumque, quae?</p></div>
+                </div>
+            </div>
+             <div class="boxHead" style="margin-top:2rem;margin-left:0"><b>Leave a Comment</b></div>
+            <hr width="80%" align="left" style="height:2px;border-width:0;color:gray;background-color:gray">
+            <form action="#">
+                <input type="name" name="uid1" id="uidName" placeholder="Enter Your name" style="width:30%"><br><br>
+                <input type="email" name="uid2" id="uidEmail" placeholder="Email" style="width:30%"><br><br>
+                <textarea rows="4" cols="50" placeholder="Comment here..."></textarea>
+  <br><br>
+                <input type="button" name="submit" id="sub" placeholder="Submit" value="Submit" style="background-color:#DDBEA8">
+            </form>
+
+        </div>
+
+        <div class="sameRow2"><div style="margin-left:4%">
+                Follow us on
+                <i class="fab fa-facebook-f" ></i>
+                <i class="fab fa-instagram" ></i>
+                <i class="fab fa-twitter" ></i>
+            </div>
+            <div class="boxHead"><b>Trending</b></div>
+            <hr width="80%" align="left" style="height:2px;border-width:0;color:gray;background-color:gray">
+            <div style="margin-left:4%;" class="containerk">
+                <!-- use loop here -->
+
+
+                <div class="flex">
+                    <div style="width: 45%" class="sameRow1">
+                        {%load static%}
+                        <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture" width="120rem" width="160rem" height="100rem">
+                    </div>
+                    <div style="width: 55%" class="sameRow2"><p style="margin-left:4%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quae?</p></div>
+                </div>
+
+                <span style="float:right"><a href="#"> View all</a></span>
+            </div>
+            <div class="boxHead"><b>Projects</b></div>
+            <hr width="80%" align="left" style="height:2px;border-width:0;color:gray;background-color:gray">
+            <div style="margin-left:4%;" class="containerk">
+                <!-- use loop here -->
+                <div class="flex">
+                    <div style="width: 45%" class="sameRow1">
+                        {%load static%}
+                        <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture" width="120rem" width="160rem" height="100rem">
+                    </div>
+                    <div style="width: 55%" class="sameRow2"><p style="margin-left:4%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quae?</p></div>
+                </div>
+                <span style="float:right"><a href="#"> View all</a></span>
+            </div>
+
+            <div class="boxHead"><b>Stories</b></div>
+            <hr width="80%" align="left" style="height:2px;border-width:0;color:gray;background-color:gray">
+            <div style="margin-left:4%;" class="containerk">
+                <!-- use loop here -->
+                <div class="flex">
+                    <div style="width: 45%" class="sameRow1">
+                        {%load static%}
+                        <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture" width="160rem" height="100rem" >
+                    </div>
+                    <div style="width: 55%" class="sameRow2"><p style="margin-left:4%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quae?</p></div>
+                </div>
+                <span style="float:right"><a href="#"> View all</a></span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{%endblock%}
