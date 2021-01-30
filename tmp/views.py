@@ -7,3 +7,6 @@ def page2(request):
 
 def page1(request):
     return render(request,"tmp/page1.html",)
+
+def blog(request):
+    return render(request,"tmp/blog.html",)
