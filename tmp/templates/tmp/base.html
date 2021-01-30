@@ -19,10 +19,11 @@
 <body>
     <div class="nav">
         <div style="height:100%;width:auto;margin-left:1%" class="logo"><img src="{% static 'tmp/media/Logo.png'%}" alt="logo here" height="90%"></div>
-        <a href="#"><button class="btn">Home</button></a>
+        <a href="{% url 'page1' %}"><button class="btn">Home</button></a>
         <a href="#"><button class="btn">Courses</button></a>
-        <a href="#"><button class="btn">Story/Blogs</button></a>
-        <a href="#"><button class="btn">Buy Courses</button></a>
+        <a href="#"><button class="btn">Story</button></a>
+        <a href="{% url 'blog' %}"><button class="btn">Blogs</button></a>
+        <a href="#"><button class="btn">Projects</button></a>
         <a href="#"><button class="btn">Contact us</button></a>
         <button class="icon"><i class="fas fa-bars"></i></button>
         <a href="#"><button style="margin-top:1.3rem" class="login">Login</button></a>
