@@ -3,10 +3,17 @@
 }
 body{
     background-color: white;
+    width: 100%;
     margin: 0;
     padding:0;
     display: block;
     background-image: radial-gradient(circle closest-side at bottom, green , white);
+}
+.king{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
 }
 .logo{
     width: 10%;
@@ -143,18 +150,20 @@ button:hover{
     75% {background:linear-gradient(rgba(13, 238, 31, 0.199),rgba(126, 137, 170, 0.781),rgba(31, 26, 30, 0.781));}
 }
 .list1{
-    width: 100%;
     list-style: none;
-    display: inline-flex;
+    display: inline-block;
     background-color: #368F8B;
     border-radius: 10px;
-    margin:5% 0%;
+    width: 100%;
+    margin:0;
 }
 
 .list1 li{
-    margin: auto;
+    display: inline-block;
+    width: 20%;
+    margin: 1%;
     background-color: linen;
-    padding:10px ;
+    padding:1% ;
     text-align: center;
     border-radius: 10%;
 }
@@ -250,14 +259,21 @@ button:hover{
     .list1{
     width: 100%;
     display: block;
+    background:white;
 }
     .list1 li{
-        margin:5px;
+        margin-top:1%;
+        margin-left: 10%;
         padding: 0px;
+        width: 80%;
+    }
+    .middle{
+        margin-top:14% ;
     }
     .sub{
         display: block;
         width: 80%;
+        margin: 5% 10% ;
     }
     .sub1{
         display:block;
