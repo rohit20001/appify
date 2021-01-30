@@ -3,6 +3,7 @@
 }
 body{
     background-color: white;
+    margin: 0;
     padding:0;
     display: block;
     background-image: radial-gradient(circle closest-side at bottom, green , white);
@@ -54,6 +55,9 @@ button:hover{
       display: inline;
       background-color: rgb(54, 201, 152);
   }
+  svg{
+      display: none;
+  }
 }
 .togle:hover{
     display: block;
@@ -78,12 +82,21 @@ button:hover{
 
 
 .detail1{
-    display: inline;
+    display: block;
+    position: relative;
 }
 .detail2{
+    position: relative;
     display: inline-block;
     width: 66%;
-    margin-left:35px;
+    left: 0;
+}
+.detail3{
+    position: relative;
+    display: inline-block;
+    width: 33%;
+    right: 0;
+    text-align: center;
 }
 .cc , .hur{
     color :rgba(218, 142, 99, 0.781);
@@ -102,25 +115,22 @@ button:hover{
     background-color:rgba(218, 142, 99, 0.781);
     border-radius: 10px;
 } 
-table{
-    width: 30%;
-    float: right;
-    border-left-style: solid;
-    border-radius: 10%;
-    background-color: white;
-    align-content: center;
-    margin-right:15px ;
-    margin-top:15px ;
-    padding-bottom: 1%;
-    padding-left: 1%;
-    padding-right: 1%;
+.detail3 form input{
+    border-style: none;
+    margin: 10px;
+    border-bottom: solid;
+    text-align: center;
 }
-td{
-    width: 50vh;
-    height:12vh;
-    text-align:center;
-    border-style:solid;
-    border-width: 2px;
+.detail3 form input[type="submit"]{
+    background:linear-gradient(rgba(218, 142, 99, 0.781),rgba(224, 215, 84, 0.781),rgba(157, 214, 92, 0.781));
+    animation: btnst 4s linear 1s infinite normal both;
+}
+@keyframes btnst{
+    0% {background:linear-gradient(rgba(218, 142, 99, 0.781),rgba(224, 215, 84, 0.781),rgba(157, 214, 92, 0.781));}
+    25% {background:linear-gradient(rgba(20, 126, 112, 0.781),rgba(224, 215, 84, 0.781),rgba(157, 214, 92, 0.781));}
+    50% {background:linear-gradient(rgba(20, 126, 112, 0.781),rgba(12, 56, 175, 0.781),rgba(157, 214, 92, 0.781));}
+    75% {background:linear-gradient(rgba(20, 126, 112, 0.781),rgba(12, 56, 175, 0.781),rgba(179, 68, 173, 0.781));}
+    75% {background:linear-gradient(rgba(13, 238, 31, 0.199),rgba(126, 137, 170, 0.781),rgba(31, 26, 30, 0.781));}
 }
 .list1{
     width: 80%;

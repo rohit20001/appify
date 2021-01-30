@@ -1,39 +1,7 @@
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {%load static%}
-    <script src="{%static 'tmp/jquery.js' %}"></script>
-    {%load static%}
-    <script src="{%static 'tmp/page.js' %}"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    {%load static%}
-    <link rel="stylesheet" href="{% static 'tmp/page.css' %}">
-    <title>home page </title>
-</head>
-
-<body style="margin: 0;padding: 0">
-    <div class="nav">
-        <button>logo...</button>
-        <a href="#"><button class="btn">Home</button></a>
-        <a href="#"><button class="btn">Courses</button></a>
-        <a href="#"><button class="btn">Story/Blogs</button></a>
-        <a href="#"><button class="btn">Buy Courses</button></a>
-        <a href="#"><button class="btn">Contact us</button></a>
-        <button class="icon"><i class="fas fa-bars"></i></button>
-        <a href="#"><button class="login">Login</button></a>
-        <a href="#"><button class="sign">Sign Up</button></a>
-        <div class="togle" id = "togle">
-            <li><a href="#"><button class="btn1">Home</button></a></li>
-            <li><a href="#"><button class="btn1">Courses</button></a></li>
-            <li><a href="#"><button class="btn1">Story/Blogs</button></a></li>
-            <li><a href="#"><button class="btn1">Buy Courses</button></a></li>
-            <li><a href="#"><button class="btn1">Contact Us</button></a></li>
-        </div>
-    </div>
+{%extends 'tmp/base.html' %}
+{% block head%} {%endblock%}
+{% block title %} home {%endblock%}
+{% block body %}
     <!----upper container -->
     <div class="king">
         <div class="upper">
@@ -45,20 +13,15 @@
                     <br>
                     <a href="#" class="mem"> Full Membership Just Rs 100</a>
                 </div>
-                <table>
-                    <tr>
-                        <th>Book Now</th>
-                    </tr>
-                    <tr>
-                        <td>something 1</td>
-                    </tr>
-                    <tr>
-                        <td>something 2</td>
-                    </tr>
-                    <tr>
-                        <td>something 3</td>
-                    </tr>
-                </table>
+                <div class="detail3">
+                    <h1>Book now</h1>
+                    <form action="#">
+                        <input type="text" name="" id="" placeholder="email id">
+                        <input type="text" name="" id="" placeholder="contact no.">
+                        <input type="text" name="" id="" placeholder="DOB"><br>
+                        <input type="submit" name="" id="" value="Submit">
+                    </form>
+                </div>
             </div>
             <div class="list1">
                 <li><i class="fas fa-code icon2"></i><br><span id="span1">100</span><br><span>Our Customer</span></li>
@@ -71,111 +34,71 @@
             </div>
 
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#368F8B" fill-opacity="0.75" d="M0,96L60,90.7C120,85,240,75,360,58.7C480,43,600,21,720,21.3C840,21,960,43,1080,48C1200,53,1320,43,1380,37.3L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg></div>
-        <div class="middle">
-            <div class="head1">
-                Some Text About Courses
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#368F8B" fill-opacity="0.75"
+                d="M0,96L60,90.7C120,85,240,75,360,58.7C480,43,600,21,720,21.3C840,21,960,43,1080,48C1200,53,1320,43,1380,37.3L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+            </path>
+        </svg>
+    </div>
+    <div class="middle">
+        <div class="head1">
+            Some Text About Courses
+        </div>
+        <div class="head2">
+            <div class="sub">
+                Some Text About Courses Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores reiciendis
+                sit saepe error. Facere, dolores. Consectetur, dolorum! Labore a aliquam earum provident, molestias
+                repudiandae, quis voluptatum, magni accusamus quam nostrum
             </div>
-            <div class="head2">
-                <div class="sub">
-                    Some Text About Courses Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores reiciendis
-                    sit saepe error. Facere, dolores. Consectetur, dolorum! Labore a aliquam earum provident, molestias
-                    repudiandae, quis voluptatum, magni accusamus quam nostrum
-                </div>
-                <div class="sub">
-                    Some Text About Courses Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores reiciendis
-                    sit saepe error. Facere, dolores. Consectetur, dolorum! Labore a aliquam earum provident, molestias
-                    repudiandae, quis voluptatum, magni accusamus quam nostrum
-                </div>
-                <div class="sub">
-                    Some Text About Courses Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores reiciendis
-                    sit saepe error. Facere, dolores. Consectetur, dolorum! Labore a aliquam earum provident, molestias
-                    repudiandae, quis voluptatum, magni accusamus quam nostrum
-                </div>
+            <div class="sub">
+                Some Text About Courses Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores reiciendis
+                sit saepe error. Facere, dolores. Consectetur, dolorum! Labore a aliquam earum provident, molestias
+                repudiandae, quis voluptatum, magni accusamus quam nostrum
             </div>
+            <div class="sub">
+                Some Text About Courses Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores reiciendis
+                sit saepe error. Facere, dolores. Consectetur, dolorum! Labore a aliquam earum provident, molestias
+                repudiandae, quis voluptatum, magni accusamus quam nostrum
+            </div>
+        </div>
 
-            <div class="head3">
-                <div class="sub1 sub2">
-                    <span class="MP">
-                            {%load static%}
-                        <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture">
-                    </span>
-                </div>
-                <div class="sub1 sub3">
-                    <h1 style="margin-top:50px" >Motivational Heading</h1><br><br>
-                    <p style="margin-top:-20px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi necessitatibus nesciunt, eos ipsa
+        <div class="head3">
+            <div class="sub1 sub2">
+                <span class="MP">
+                    {%load static%}
+                    <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture">
+                </span>
+            </div>
+            <div class="sub1 sub3">
+                <h1 style="margin-top:50px">Motivational Heading</h1><br><br>
+                <p style="margin-top:-20px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+                    necessitatibus nesciunt, eos ipsa
                     od
                     io itaque facilis. Sed ipsam neque culpa expedita, autem, sint voluptatem quia iure nam dolorem
-                        omnis molestiae?</p>
-                    <br><br>
-                    <p style="margin-bottom:180px">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, saepe qui corporis, architecto
+                    omnis molestiae?</p>
+                <br><br>
+                <p style="margin-bottom:180px">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, saepe
+                    qui corporis, architecto
                     quibusdam facere
                     dolorem ullam impedit rerum asperiores earum ut autem, voluptas cumque. Nobis necessitatibus
-                        voluptatibus fugit ab!
+                    voluptatibus fugit ab!
                     <br><br>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptatum sapiente iure
                     consequuntur delectus, eligendi assumenda, cupiditate eos harum, expedita vel at deleniti ipsa
-                        dolorem! Quis, similique asperiores. Quasi, accusamus.</p>
-                </div>
-            </div>
-            <div class="head4">
-                <h1>Feedbacks</h1>
-                <div class="head5">
-                    <button> <i class="fas fa-angle-left"></i></button>
-                    <span class="sub5">feedback 1</span>
-                    <span class="sub5">feedback 2</span>
-                    <span class="sub5">feedback 3</span>
-                    <button><i class="fas fa-angle-right"></i></button>
-                </div>
+                    dolorem! Quis, similique asperiores. Quasi, accusamus.
+                </p>
             </div>
         </div>
-
-<div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100"><path fill="#368F8B" fill-opacity="1" d="M0,96L60,90.7C120,85,240,75,360,58.7C480,43,600,21,720,21.3C840,21,960,43,1080,48C1200,53,1320,43,1380,37.3L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg></div><div style="background-color:#368F8B;height:12rem">
-        <div class="lower">
-            <div class="lowerleft">
-                <ul class="llist">
-                    <li class="lhead"> Courses</li>
-                    <li>ahsjhskhoih</li>
-                    <li>ahsjhskhoih</li>
-                    <li>ahsjhskhoih</li>
-                    <li>ahsjhskhoih</li>
-                </ul>
-                <ul class="llist">
-                    <li class="lhead">Mock Tests</li>
-                    <li>ahsjhskhoih</li>
-                    <li>ahsjhskhoih</li>
-                    <li>ahsjhskhoih</li>
-                    <li>ahsjhskhoih</li>
-                </ul>
-                <ul class="llist">
-                    <li class="lhead">Organization</li>
-                    <li>ahsjhskhoih</li>
-                    <li>ahsjhskhoih</li>
-                    <li>ahsjhskhoih</li>
-                    <li>ahsjhskhoih</li>
-                </ul>
-            </div>
-            <div class="lowerright">
-                <i class="fas fa-check-square fa-5x"></i><br>
-                <b>Fully Secured and verified</b>
-            </div>
-        </div>
-        <div class="llf">
-            <div class="lf">
-            <form action="#">
-                <label for="uid">Subscribe for NewsLetter</label><br>
-                <input type="mail" name="uid" id="uid" placeholder="Enter Your Email Id">
-            </form>
-            </div>
-            <div class="lows">
-                Follow us on
-                <i class="fab fa-facebook-f" ></i>
-                <i class="fab fa-instagram" ></i>
-                <i class="fab fa-twitter" ></i>
+        <div class="head4">
+            <h1>Feedbacks</h1>
+            <div class="head5">
+                <button> <i class="fas fa-angle-left"></i></button>
+                <span class="sub5">feedback 1</span>
+                <span class="sub5">feedback 2</span>
+                <span class="sub5">feedback 3</span>
+                <button><i class="fas fa-angle-right"></i></button>
             </div>
         </div>
     </div>
-    </div>
-</body>
 
-</html>
+   {%endblock%}

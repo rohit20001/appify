@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def page2(request):
     return render(request,"tmp/page2.html",)
+
+def page1(request):
+    return render(request,"tmp/page1.html",)
