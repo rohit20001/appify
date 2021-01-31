@@ -238,12 +238,14 @@ button:hover{
     background-color: rgba(14, 36, 36, 0.726);
     align-content: center;
 }
-.sub5{
+.dsub5{
     margin: 2% 7%;
     display: inline-block;
-    height: 99px;
-    width: 140px;
-    background-color: linen
+    height: 100px;
+    width: 15%;
+    background-color: linen;
+    overflow: scroll;
+    position: relative;
 }
 .fa-angle-left,.fa-angle-right{
     color: white;
@@ -280,7 +282,7 @@ button:hover{
         width: 100%;
     }
     .fa-angle-left,.fa-angle-right{
-    display: none;
+    /* display: none; */
     }
     .sub5{
         display: block;

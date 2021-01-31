@@ -47,3 +47,14 @@ html {
     opacity: 0.8;
     transition: 0.2s;
 }
+@media only screen and (max-width:650px){
+    .flex{
+        display: block;
+    }
+    .sameRow1{
+        width: 100%;
+    }
+    .sameRow2{
+        width: 100%;
+    }
+}
