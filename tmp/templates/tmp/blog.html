@@ -14,6 +14,7 @@
             <div class="containerk">
                 <!-- Give loop for projects-->
                 {% for post in page_obj %}
+<<<<<<< HEAD
                 <a href="{% url 'post' post.id %}">
                     <div style="background-color:#F8F2ED">
                         <div class="flex">
@@ -31,6 +32,19 @@
                             </div>
                         </div>
                 </a>
+=======
+
+                <div style="background-color:#F8F2ED">
+                    <a style="text-decoration:none;color: inherit" href="{% url 'post' post.id %}">
+                <div class="flex">
+                <div style="width: 30%" class="sameRow1">
+                    {%load static%}
+                        <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="240rem" height="160rem" >
+                </div>
+                    <div style="width: 70%" class="sameRow2"><div style="margin-left:4%"><h5>{{ post.title|safe }}</h5><p style="margin-left:4%;margin-top:-3%;">{{ post.content_upper_para|truncatewords:50|safe }}</p></div></div>
+                </div>
+                    </a>
+>>>>>>> a8afeb22e20a062dda9dd99d6374189db9756d38
                 <span style="float:right"> <i>By- {{ post.postedBy }}</i></span><br>
                 <span style="float:right"> <i>{{ post.posted_date|date:"F d, Y" }}</i></span>
                 <div style="margin-top:1%">
@@ -103,6 +117,7 @@
             <!-- use loop here -->
             {% for post in page_obj|slice:"0:3" %}
 
+<<<<<<< HEAD
 
             <div style="margin-bottom: 1rem" class="flex">
                 <div style="width: 45%" class="sameRow1">
@@ -133,6 +148,50 @@
                     <p style="margin-left:4%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quae?
                     </p>
                 </div>
+=======
+        <div class="sameRow2"><div style="margin-left:4%">
+                Follow us on
+                <i class="fab fa-facebook-f" ></i>
+                <i class="fab fa-instagram" ></i>
+                <i class="fab fa-twitter" ></i>
+            </div>
+            <div class="boxHead"><b>Trending</b></div>
+            <hr width="80%" align="left" style="height:2px;border-width:0;color:gray;background-color:gray">
+            <div style="margin-left:4%;" class="containerk">
+                <!-- use loop here -->
+                {% for post in page_obj|slice:"0:3" %}
+
+                <a style="text-decoration:none;color: inherit" href="{% url 'post' post.id %}">
+                <div style="margin-bottom: 1rem" class="flex">
+                    <div style="width: 45%" class="sameRow1">
+                        {%load static%}
+                        <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="160rem" height="100rem" >
+                    </div>
+                    <div style="width: 55%" class="sameRow2"><h6>{{post.title}}</h6><p style="margin-left:4%;margin-top:-1rem">{{ post.content_upper_para|truncatewords:10|safe }}</p></div>
+                </div>
+                </a>
+                {% endfor %}
+
+
+                <span style="float:right"><a href="#"> View all</a></span>
+            </div>
+            <div class="boxHead"><b>Projects</b></div>
+            <hr width="80%" align="left" style="height:2px;border-width:0;color:gray;background-color:gray">
+            <div style="margin-left:4%;" class="containerk">
+                <!-- use loop here -->
+                {% for i in projec|slice:"0:3" %}
+                <a style="text-decoration:none;color: inherit" href="/projects/?page={{i.id|add:'-1'}}">
+                <div style="margin-bottom: 1rem" class="flex">
+                    <div style="width: 45%" class="sameRow1">
+                        {%load static%}
+                        <img src='/media/{{i.projectImage}}' alt="Motivational picture" width="160rem" height="100rem" >
+                    </div>
+                    <div style="width: 55%" class="sameRow2"><h6>{{i.head}}</h6><p style="margin-left:4%;">{{i.content|truncatewords:7|safe}}</p></div>
+                </div>
+                    </a>
+                {% endfor %}
+                <span style="float:right"><a href="{% url 'projects' %}"> View all</a></span>
+>>>>>>> a8afeb22e20a062dda9dd99d6374189db9756d38
             </div>
             <span style="float:right"><a href="#"> View all</a></span>
         </div>
