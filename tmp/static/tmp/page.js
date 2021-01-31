@@ -21,8 +21,8 @@ $('.king').click(function(){
             right: "0%"
         });
         $(".dsub5").animate({
-            height:'100px',
-            width: '15%',
+            height:'250px',
+            width: '20%',
         });
         $('.sub5').fadeIn();
 
@@ -43,8 +43,8 @@ $('.king').click(function(){
             left: "0%"
         });
         $(".dsub5").animate({
-            height:'100px',
-            width: '15%',
+            height:'250px',
+            width: '20%',
         });
         $('.sub5').fadeIn();
     });
