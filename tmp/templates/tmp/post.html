@@ -2,20 +2,16 @@
 {% block head%}{%load static%}
     <link rel="stylesheet" href="{% static 'tmp/blog.css' %}">
 {%endblock%}
-{% block title %} Blog {%endblock%}
+{% block title %} Blog | {{ post.title }} {%endblock%}
 {% block body %}
 
 <div class="center" class="containerk" >
     <div class="flex">
-        <div class="sameRow1"><span style="font-size:60px;"> New blog will appear<br> here<hr width="80%" align="left"></span>
-            <div class="upperpara"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam culpa cupiditate, eum id incidunt ipsum minus molestias nobis obcaecati odio optio pariatur quia similique veniam. Blanditiis, odio, temporibus. Rerum.
-            </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet deleniti dicta doloribus esse ex in laudantium maiores non obcaecati omnis quaerat, sequi sint voluptates voluptatum!</p>
+        <div class="sameRow1"><span style="font-size:60px;"> {{ post.title }}<hr width="80%" align="left"></span>
+            <div class="upperpara"><p>{{ post.content_upper_para|safe }}</p>
                 {%load static%}
-                        <img src="{% static 'tmp/new.jpg' %}" alt="Motivational picture" width="560rem" height="420rem" class="centerimage" style="margin-top:3rem;margin-bottom:3rem">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam culpa cupiditate, eum id incidunt ipsum minus molestias nobis obcaecati odio optio pariatur quia similique veniam. Blanditiis, odio, temporibus. Rerum.
-            </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet deleniti dicta doloribus esse ex in laudantium maiores non obcaecati omnis quaerat, sequi sint voluptates voluptatum!</p>
+                        <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="560rem" height="420rem" class="centerimage" style="margin-top:3rem;margin-bottom:3rem">
+                <p>{{ post.content_lower_para|safe }}</p>
             </div>
             <div style="margin-top:3%">
                 Share on these platforms
@@ -30,9 +26,9 @@
                 <div class="flex">
                     <div style="width: 30%" class="sameRow1">
                         {%load static%}
-                        <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture" width="250rem" height="190rem" >
+                        <img src='/media/{{post.authorImage}}' alt="Motivational picture" width="250rem" height="190rem" >
                     </div>
-                    <div style="width: 70%" class="sameRow2"><h2 style="margin-left:4%;">Name</h2><p style="margin-left:4%;">Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt harum ipsa magni molestiae quis quo! Aliquam architecto asperiores deserunt doloribus ea eveniet ex facilis fugit illo in, iste minus modi necessitatibus nihil non nostrum obcaecati odit officia omnis porro quam quas quidem quisquam quod quos saepe sapiente sequi temporibus! dolor sit amet, consectetur adipisicing elit. Cumque, quae?</p></div>
+                    <div style="width: 70%" class="sameRow2"><h2 style="margin-left:4%;">{{post.postedBy}}</h2><p style="margin-left:4%;">{{post.aboutAuthor|safe}}</p></div>
                 </div>
             </div>
              <div class="boxHead" style="margin-top:2rem;margin-left:0"><b>Leave a Comment</b></div>

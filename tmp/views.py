@@ -1,15 +1,25 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
+from django.core.paginator import Paginator
+from tmp.models import Post
 
 # Create your views here.
 def page1(request):
     return render(request,"tmp/page1.html",)
 
 def blog(request):
-    context = {
-        "data": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-        "trend": [1, 2, 3],
-    }
+    posts = Post.objects.all().order_by('-posted_date')
+    paginator = Paginator(posts, 4)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {'page_obj': page_obj}
     return render(request,"tmp/blog.html",context)
+
+def post(request, post_id=None):
+    post = get_object_or_404(Post, id=post_id)
+    context = {'post': post}
+    return render(request, 'tmp/post.html', context)
 
 
 
