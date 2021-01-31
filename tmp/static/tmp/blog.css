@@ -93,6 +93,11 @@ margin-left:4%;
 margin-top:-3%;
 }
 
+.contentcssp{
+margin-left:4%;
+margin-top:-2%;
+}
+
 .floatright{
 float:right;
 }
@@ -141,4 +146,21 @@ margin-top:-1rem;
 
 .mb1{
 margin-bottom:1rem;
+}
+.titlesize{
+font-size:60px;
+}
+
+.mt3{
+margin-top:3%;
+}
+
+.author{
+margin-top:2rem;
+margin-left:0;
+}
+
+.paracut{
+margin-left:2rem;
+margin-top:-1rem;
 }
