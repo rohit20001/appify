@@ -6,6 +6,12 @@ from tmp.models import Post,Project
 def page1(request):
     return render(request,"tmp/page1.html",)
 
+def page2(request):
+    return render(request,"tmp/page2.html",)
+
+def courses(request):
+    return render(request,"tmp/courses.html",)
+
 def blog(request):
     posts = Post.objects.all().order_by('-posted_date')
     paginator = Paginator(posts, 4)
