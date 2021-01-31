@@ -1,0 +1,109 @@
+{%extends 'tmp/base.html' %}
+{% block head%}{%load static%}
+    <style>
+        .box{
+    margin-top: 4%;
+    height: 80px;
+    width: 100%;
+    background-color: #e2eedd;
+}
+.box .box1{
+    margin-left: 60%;
+    border-radius: 20%;
+    background-color: antiquewhite;
+}
+.box2{
+    width: 100%;
+    height: 550px;
+    background-color: rgb(253, 243, 234);
+}
+.box21{
+    width: 200px;
+    height: 100px;
+    padding: 2px;
+    margin-left: 20%;
+    border: solid rgb(24, 24, 24);
+    background-color: white;
+    left: 20%;
+    margin-top: 10px;
+}
+.box22{
+    width: 200px;
+    height: 100px;
+    padding: 2px;
+    margin-left: 20%;
+    border: solid rgb(24, 24, 24);
+    background-color: white;
+    margin-top: 20px;
+}
+.box23{
+    width: 200px;
+    height: 100px;
+    padding: 2px;
+    border: solid rgb(24, 24, 24);
+    background-color: white;
+    margin-top: 20px;
+}
+.box3{
+    width: 100%;
+    height:150px;
+    margin-top: 20px;
+    background-color:white;
+}
+.box31{
+    width: 100px;
+    height: 100px;
+    padding: 2px;
+    margin-left: 10%;
+    border: solid rgb(24, 24, 24);
+    background-color: white;
+    margin-top: 20px;
+    float: left;
+
+}
+.box4{
+    margin-top: 10%;
+    background-color: violet;
+    width: 400px;
+    height: 200px;
+    padding: 2px;
+    margin-left: 35%;
+    border: solid rgb(24, 24, 24);
+    background-color: white;
+    margin-top: 60px;
+
+}
+    </style>
+{%endblock%}
+{% block title %} Courses {%endblock%}
+{% block body %}
+<div class="box">
+    Get a Membership of just at Rs. 100 and get unlimited Access to <br>
+    Courses and projects and many more for a month.
+    <button class="box1">Buy Now</button>
+</div>
+<div class="box2">
+    <div style="width: 40%;height: 500px;float: left;">
+    <div class="box21">Python</div>
+    <div class="box22">Basic skills</div>
+    <div class="box22">Machine Learning</div>
+    <div class="box22">Data Structure</div>
+    </div>
+    <div style="width: 40%;height: 500px;float: right;">
+        <div class="box22">Java</div>
+        <div class="box22">Programming with c</div>
+        <div class="box22">Android App Learning</div>
+        </div>
+</div>
+<div style="margin-top: 30px; text-align: center;text-size-adjust: 30px;">Benefits of these courses</div>
+<div class="box3">
+    <div class="box31">Certi</div>
+    <div class="box31">When you want</div>
+    <div class="box31">Doubt Solve</div>
+    <div class="box31">Really earn skills</div>
+    <div class="box31">Cheap and best</div>
+</div>
+<div class="box4">
+Add for our blogging<br>besr blogger of month will get unlimited access for a month and internship also
+</div>
+{%endblock%}

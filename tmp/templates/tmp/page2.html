@@ -1,14 +1,9 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{%extends 'tmp/base.html' %}
+{% block head%}    {%load static%}
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
     <style>
         .square{
           width: 100px;
@@ -25,33 +20,18 @@
           display: flex;
           justify-content: center;
         }
-        .slider {
-  width: 300px;
-  height: 300px;
-  display: flex;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory; 
-}
-.slide {
-  width: 300px;
-  flex-shrink: 0;
-  background-color: blue;
-  text-align: center;
-  border:black;
-  height: 100%;
-}
-.slides > div {
-  /* CURRENT way. */
-  scroll-snap-align: start;
-}
-        img{
-          
-          display: block;
-          width:15%;
-          height:50%;
-          margin-left:70%;
+        .container .box{
+          position: relative;
+          width: calc(300px - 30px);
+          height: calc(200px - 30px);
+          float: left;
+          margin-left: 30px;
+          margin-right: 0px;
+          border: solid black;
+          margin: 40px 30px 0px 40px;
+          text-align: center;
         }
+      
         .sub{
     margin: 2% 2%;
     display: inline-block;
@@ -66,22 +46,87 @@
   border-radius: 50%;
   display: inline-block;
 }
+.box1 {
+  width: 60%;
+  float:left
+}
+.slidershow{
+          width:700px;
+          height: 400px;
+          overflow: hidden;
+          margin-top: 250px;
+        }
+        .middle{
+          position: absolute;
+          width:700px;
+          height: 400px;
+          left: 50%;
+          transform: translate(-50%,-50%);
+        }
+        .navigation{
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+        }
+        .bar{
+          width: 50px;
+          height: 10px;
+          border: 2px solid #fff;
+          margin: 6px;
+          cursor: pointer;
+          transition: 0.4s;
+        }
+        .bar:hover{
+          background: #fff;
+        }
+        input[name="r"]{
+          position: absolute;
+          visibility: hidden;
+        }
+        .slides{
+          width: 500%;
+          height: 100%;
+          display: flex;
+        }
+        .slide{
+          width: 20%;
+          transition: 0.6s;
+        }
+        .slide img{
+          width: 100%;
+          height: 100%;
+        }
+        #r1:checked ~ .s1{
+          margin-left: 0%;
+        }
+        #r2:checked ~ .s2{
+          margin-left: -20%;
+        }
+        #r3:checked ~ .s3{
+          margin-left: -40%;
+        }
 
     </style>
-  </head>
-  <body>
-    <div style="background-color:#e2eedd;width: 100%;height: 200px;">
+ {%endblock%}
+{% block title %} Page2 {%endblock%}
+{% block body %}
+    <div style="background-color:#e2eedd;width: 100%;height: 200px;margin-top: 50px;" >
+      <div class="box2">
       <span class="sub">Khjgh</span>
       <span class="sub">kgftygk</span>
       <span class="sub">hjgu</span>
       <span class="sub">hjgu</span>
+      </div>
+      <div class="box3" style="margin-left: 50%;">
       <span class="dot"></span>
       <span class="dot"></span>
-      <span class="dot"></span>
-      <img src="static\tmp\laptop.jpg" alt="laptop"></div>
+      <span class="dot"></span></div>
+    </div>
       <h4 style="text-align: center; font-family: sans-serif; "> Topper's Talk</h4>
       <div style="width: 80px; text-align: center;margin-left: 720px; background-color: black;height: 3px;"></div>
-      <div style="background-color:#eeeedd;margin-top: 40px;width: 100%;height: 400px;">
+      <div style="background-color:#eeeedd;margin-top: 40px;width: 100%;height: 430px;">
       <div class="square" style="margin-top: 20px;">
         <div style="margin-left: 150px">Name<br><p>bsjafhgohsixkjjxknkjbijlfhjxcbjbf<br>bjbgjbigbrwjiabfbfjhfj<br>
         <a href="">ReadFullArticle</a></p></div>
@@ -100,34 +145,36 @@
       <div style="width: 80px; text-align: center;margin-left: 720px; background-color: black;height: 3px;"></div>
 
       <div class="container" style="margin-top: 20px;">
-        <div class="slide-wrap">
-  
-          <a href="#slide-1">1</a>
-          <a href="#slide-2">2</a>
-          <a href="#slide-3">3</a>
-          <a href="#slide-4">4</a>
-          <a href="#slide-5">5</a>
-        
-          <div class="slider">
-            <div class="slide" id="slide-1">1</div>
-            <div class="slide" id="slide-2">2</div>
-            <div class="slide" id="slide-3">3</div>
-            <div class="slide" id="slide-4">4</div>
-            <div class="slide" id="slide-5">5</div>
-          </div>
-          
+        <div class="box">
+        </div>
+        <div class="box">jkgiug
+        </div>
+        <div class="box">klhgf
         </div>
       </div>
       <h4 style="text-align: center; font-family: sans-serif; margin-top: 50px;">Blogs</h4>
       <div style="width: 80px; text-align: center;margin-left: 720px; background-color: black;height: 3px;"></div>
 
-      <div class="container" style="margin-top: 20px;">
-        <div class="box">
+      <div class="slidershow middle">
+        <div class="slides">
+          <input type="radio" name="r" id="r1" checked>
+          <input type="radio" name="r" id="r2">
+          <input type="radio" name="r" id="r3">
+        <div class="slide s1">
+          <img src="{% static 'tmp\media\1.jpg' %}" alt="img1">
         </div>
-        <div class="box">
+        <div class="slide s2">
+          <img src="{% static 'tmp/media/3.jpg' %}" alt="img2">
         </div>
-        <div class="box">
+        <div class="slide s3">
+          <img src="{% static 'tmp/media/all.jpg' %}" alt="img3">
         </div>
+      </div>
+      <div class="navigation">
+        <label for="r1" class="bar"></label>
+        <label for="r2" class="bar"></label>
+        <label for="r3" class="bar"></label>
+      </div>
       </div>
 
 
@@ -142,5 +189,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     -->
-  </body>
+  {% endblock %}
 </html>
