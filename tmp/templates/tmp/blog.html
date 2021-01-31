@@ -108,14 +108,18 @@
             <hr width="80%" align="left" style="height:2px;border-width:0;color:gray;background-color:gray">
             <div style="margin-left:4%;" class="containerk">
                 <!-- use loop here -->
+                {% for i in projec|slice:"0:3" %}
+                <a style="text-decoration:none;color: inherit" href="/projects/?page={{i.id|add:'-1'}}">
                 <div style="margin-bottom: 1rem" class="flex">
                     <div style="width: 45%" class="sameRow1">
                         {%load static%}
-                        <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture" width="160rem" height="100rem" >
+                        <img src='/media/{{i.projectImage}}' alt="Motivational picture" width="160rem" height="100rem" >
                     </div>
-                    <div style="width: 55%" class="sameRow2"><p style="margin-left:4%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quae?</p></div>
+                    <div style="width: 55%" class="sameRow2"><h6>{{i.head}}</h6><p style="margin-left:4%;">{{i.content|truncatewords:7|safe}}</p></div>
                 </div>
-                <span style="float:right"><a href="#"> View all</a></span>
+                    </a>
+                {% endfor %}
+                <span style="float:right"><a href="{% url 'projects' %}"> View all</a></span>
             </div>
 
             <div class="boxHead"><b>Stories</b></div>
