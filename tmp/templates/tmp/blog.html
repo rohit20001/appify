@@ -1,137 +1,162 @@
 {%extends 'tmp/base.html' %}
 {% block head%}{%load static%}
-    <link rel="stylesheet" href="{% static 'tmp/blog.css' %}">
-    <link rel="stylesheet" href="{% static 'tmp/style.css' %}">
-{%endblock%}
+<link rel="stylesheet" href="{% static 'tmp/blog.css' %}">
+<!--<link rel="stylesheet" href="{% static 'tmp/style.css' %}">
+-->{%endblock%}
 {% block title %} Blogs {%endblock%}
 {% block body %}
 
-<div class="center" class="containerk" >
+<div class="center" class="containerk">
     <div class="flex">
-        <div class="sameRow1"><div class="boxHead" style="margin-top:2rem;margin-left:0;font-size:24px;width:20rem;"><b>Blogs</b></div><hr width="90%" align="left" style="height:2px;border-width:0;color:gray;background-color:gray">
-            <div class="containerk" >
+        <div class="sameRow1">
+            <div class="boxHead blogHead" ><b>Blogs</b></div>
+            <hr width="90%" align="left" class="horz1">
+            <div class="containerk">
                 <!-- Give loop for projects-->
                 {% for post in page_obj %}
-                <a style="text-decoration:none;color: inherit" href="{% url 'post' post.id %}">
-                <div style="background-color:#F8F2ED">
-                <div class="flex">
-                <div style="width: 30%" class="sameRow1">
-                    {%load static%}
-                        <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="240rem" height="160rem" >
-                </div>
-                    <div style="width: 70%" class="sameRow2"><div style="margin-left:4%"><h5>{{ post.title|safe }}</h5><p style="margin-left:4%;margin-top:-3%;">{{ post.content_upper_para|slice:":35"|safe }}</p></div></div>
-                </div>
-                    </a>
+                <a href="{% url 'post' post.id %}">
+                    <div style="background-color:#F8F2ED">
+                        <div class="flex">
+                            <div style="width: 30%," class="sameRow1">
+                                {%load static%}
+                                <img src='/media/{{post.blogImage}}' alt="Motivational picture1" width="240rem"
+                                    height="160rem">
+                            </div>
+                            <div style="width: 70%" class="sameRow2">
+                                <div style="margin-left:4%">
+                                    <h5>{{ post.title|safe }}</h5>
+                                    <p style="margin-left:4%;margin-top:-3%;">{{
+                                        post.content_upper_para|slice:":35"|safe }}</p>
+                                </div>
+                            </div>
+                        </div>
+                </a>
                 <span style="float:right"> <i>By- {{ post.postedBy }}</i></span><br>
-                    <span style="float:right"> <i>{{ post.posted_date|date:"F d, Y" }}</i></span>
+                <span style="float:right"> <i>{{ post.posted_date|date:"F d, Y" }}</i></span>
                 <div style="margin-top:1%">
-                Share on these platforms
-                <i class="fab fa-facebook-f" ></i>
-                <i class="fab fa-instagram" ></i>
-                <i class="fab fa-twitter" ></i>
+                    Share on these platforms
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
                 </div>
-                <hr width="100%" align="left" style="height:2px;border-width:0;color:gray;background-color:gray">
-                </div>
-
-                {% endfor %}
+                <hr width="100%" align="left" class="horz1">
             </div>
+
+            {% endfor %}
+        </div>
 
         <div class="container">
-    <div class="row mt-5 mb-n2">
-        <div class="col-12 text-center text-muted">
-            <p><span>Showing page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></p>
-        </div>
-    </div>
+            <div class="row mt-5 mb-n2">
+                <div class="col-12 text-center text-muted">
+                    <p><span>Showing page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></p>
+                </div>
+            </div>
 
-    <ul class="pagination pagination-sm mb-5 justify-content-center">
-        {% if page_obj.has_previous %}
-            <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
-        {% endif %}
+            <ul class="pagination pagination-sm mb-5 justify-content-center">
+                {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                </li>
+                {% endif %}
 
-        {% for num in page_obj.paginator.page_range %}
-            {% if page_obj.number == num %}
+                {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
                 <li class="page-item active"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
-            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
-            {% endif %}
-        {% endfor %}
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %} <li class="page-item"><a
+                        class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                    {% endif %}
+                    {% endfor %}
 
-        {% if page_obj.has_next %}
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
-        {% endif %}
-    </ul>
-</div>
-
-
-             <div class="boxHead" style="margin-top:2rem;margin-left:0"><b>Give Your Ideas</b></div>
-            <hr width="80%" align="left" style="height:2px;border-width:0;color:gray;background-color:gray">
-            <form action="#">
-                <input type="name" name="uid1" id="uidName" placeholder="Enter Your name" style="width:30%"><br><br>
-                <input type="email" name="uid2" id="uidEmail" placeholder="Email" style="width:30%"><br><br>
-                <textarea rows="4" cols="50" placeholder="Comment here..."></textarea>
-  <br><br>
-                <input type="button" name="submit" id="sub" placeholder="Submit" value="Submit" style="background-color:#DDBEA8">
-            </form>
-
+                    {% if page_obj.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last
+                            &raquo;</a></li>
+                    {% endif %}
+            </ul>
         </div>
 
-        <div class="sameRow2"><div style="margin-left:4%">
-                Follow us on
-                <i class="fab fa-facebook-f" ></i>
-                <i class="fab fa-instagram" ></i>
-                <i class="fab fa-twitter" ></i>
-            </div>
-            <div class="boxHead"><b>Trending</b></div>
-            <hr width="80%" align="left" style="height:2px;border-width:0;color:gray;background-color:gray">
-            <div style="margin-left:4%;" class="containerk">
-                <!-- use loop here -->
-                {% for post in page_obj|slice:"0:3" %}
 
+        <div class="boxHead ideaHead" ><b>Give Your Ideas</b></div>
+        <hr width="80%" align="left" class="horz1">
+        <form action="#">
+            <input type="name" name="uid1" id="uidName" placeholder="Enter Your name" style="width:30%"><br><br>
+            <input type="email" name="uid2" id="uidEmail" placeholder="Email" style="width:30%"><br><br>
+            <textarea rows="4" cols="50" placeholder="Comment here..."></textarea>
+            <br><br>
+            <input type="button" name="submit" id="sub" placeholder="Submit" value="Submit"
+                style="background-color:#DDBEA8">
+        </form>
 
-                <div style="margin-bottom: 1rem" class="flex">
-                    <div style="width: 45%" class="sameRow1">
-                        {%load static%}
-                        <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="160rem" height="100rem" >
-                    </div>
-                    <div style="width: 55%" class="sameRow2"><h6>{{post.title}}</h6><p style="margin-left:4%;margin-top:-1rem">{{ post.content_upper_para|slice:":20"|safe }}</p></div>
-                </div>
-                {% endfor %}
-
-
-                <span style="float:right"><a href="#"> View all</a></span>
-            </div>
-            <div class="boxHead"><b>Projects</b></div>
-            <hr width="80%" align="left" style="height:2px;border-width:0;color:gray;background-color:gray">
-            <div style="margin-left:4%;" class="containerk">
-                <!-- use loop here -->
-                <div style="margin-bottom: 1rem" class="flex">
-                    <div style="width: 45%" class="sameRow1">
-                        {%load static%}
-                        <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture" width="160rem" height="100rem" >
-                    </div>
-                    <div style="width: 55%" class="sameRow2"><p style="margin-left:4%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quae?</p></div>
-                </div>
-                <span style="float:right"><a href="#"> View all</a></span>
-            </div>
-
-            <div class="boxHead"><b>Stories</b></div>
-            <hr width="80%" align="left" style="height:2px;border-width:0;color:gray;background-color:gray">
-            <div style="margin-left:4%;" class="containerk">
-                <!-- use loop here -->
-
-                <div style="margin-bottom: 1rem" class="flex">
-                    <div style="width: 45%" class="sameRow1">
-                        {%load static%}
-                        <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture" width="160rem" height="100rem" >
-                    </div>
-                    <div style="width: 55%" class="sameRow2"><p style="margin-left:4%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quae?</p></div>
-                </div>
-                <span style="float:right"><a href="#"> View all</a></span>
-            </div>
-
-        </div>
     </div>
+
+    <div class="sameRow2">
+        <div style="margin-left:4%">
+            Follow us on
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+        <div class="boxHead"><b>Trending</b></div>
+        <hr width="80%" align="left" class="horz1">
+        <div style="margin-left:4%;" class="containerk">
+            <!-- use loop here -->
+            {% for post in page_obj|slice:"0:3" %}
+
+
+            <div style="margin-bottom: 1rem" class="flex">
+                <div style="width: 45%" class="sameRow1">
+                    {%load static%}
+                    <img src='/media/{{post.blogImage}}' alt="Motivational picture 2" width="160rem" height="100rem">
+                </div>
+                <div style="width: 55%" class="sameRow2">
+                    <h6>{{post.title}}</h6>
+                    <p style="margin-left:4%;margin-top:-1rem">{{ post.content_upper_para|slice:":20"|safe }}</p>
+                </div>
+            </div>
+            {% endfor %}
+
+
+            <span style="float:right"><a href="#"> View all</a></span>
+        </div>
+        <div class="boxHead"><b>Projects</b></div>
+        <hr width="80%" align="left" class="horz1">
+        <div style="margin-left:4%;" class="containerk">
+            <!-- use loop here -->
+            <div style="margin-bottom: 1rem" class="flex">
+                <div style="width: 45%" class="sameRow1">
+                    {%load static%}
+                    <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture" width="160rem"
+                        height="100rem">
+                </div>
+                <div style="width: 55%" class="sameRow2">
+                    <p style="margin-left:4%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quae?
+                    </p>
+                </div>
+            </div>
+            <span style="float:right"><a href="#"> View all</a></span>
+        </div>
+
+        <div class="boxHead"><b>Stories</b></div>
+        <hr width="80%" align="left" class="horz1">
+        <div style="margin-left:4%;" class="containerk">
+            <!-- use loop here -->
+
+            <div style="margin-bottom: 1rem" class="flex">
+                <div style="width: 45%" class="sameRow1">
+                    {%load static%}
+                    <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture" width="160rem"
+                        height="100rem">
+                </div>
+                <div style="width: 55%" class="sameRow2">
+                    <p style="margin-left:4%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quae?
+                    </p>
+                </div>
+            </div>
+            <span style="float:right"><a href="#"> View all</a></span>
+        </div>
+
+    </div>
+</div>
 </div>
 {%endblock%}
