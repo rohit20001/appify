@@ -12,14 +12,15 @@
             <div class="containerk" >
                 <!-- Give loop for projects-->
                 {% for post in page_obj %}
-                <a style="text-decoration:none;color: inherit" href="{% url 'post' post.id %}">
+
                 <div style="background-color:#F8F2ED">
+                    <a style="text-decoration:none;color: inherit" href="{% url 'post' post.id %}">
                 <div class="flex">
                 <div style="width: 30%" class="sameRow1">
                     {%load static%}
                         <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="240rem" height="160rem" >
                 </div>
-                    <div style="width: 70%" class="sameRow2"><div style="margin-left:4%"><h5>{{ post.title|safe }}</h5><p style="margin-left:4%;margin-top:-3%;">{{ post.content_upper_para|slice:":35"|safe }}</p></div></div>
+                    <div style="width: 70%" class="sameRow2"><div style="margin-left:4%"><h5>{{ post.title|safe }}</h5><p style="margin-left:4%;margin-top:-3%;">{{ post.content_upper_para|truncatewords:50|safe }}</p></div></div>
                 </div>
                     </a>
                 <span style="float:right"> <i>By- {{ post.postedBy }}</i></span><br>
@@ -89,14 +90,15 @@
                 <!-- use loop here -->
                 {% for post in page_obj|slice:"0:3" %}
 
-
+                <a style="text-decoration:none;color: inherit" href="{% url 'post' post.id %}">
                 <div style="margin-bottom: 1rem" class="flex">
                     <div style="width: 45%" class="sameRow1">
                         {%load static%}
                         <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="160rem" height="100rem" >
                     </div>
-                    <div style="width: 55%" class="sameRow2"><h6>{{post.title}}</h6><p style="margin-left:4%;margin-top:-1rem">{{ post.content_upper_para|slice:":20"|safe }}</p></div>
+                    <div style="width: 55%" class="sameRow2"><h6>{{post.title}}</h6><p style="margin-left:4%;margin-top:-1rem">{{ post.content_upper_para|truncatewords:10|safe }}</p></div>
                 </div>
+                </a>
                 {% endfor %}
 
 

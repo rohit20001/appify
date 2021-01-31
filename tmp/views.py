@@ -18,7 +18,8 @@ def blog(request):
 
 def post(request, post_id=None):
     post = get_object_or_404(Post, id=post_id)
-    context = {'post': post}
+    x = Post.objects.all().order_by('-posted_date')
+    context = {'post': post,'x': x}
     return render(request, 'tmp/post.html', context)
 
 
