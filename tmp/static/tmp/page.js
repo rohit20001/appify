@@ -21,11 +21,7 @@ $('.king').click(function(){
             right: "0%"
         });
         $(".dsub5").animate({
-<<<<<<< HEAD
             height:'100px',
-=======
-            height:'250px',
->>>>>>> ba0adebc1fd43254ed5e01cf9ea9e95d0c2415f8
             width: '20%',
         });
         $('.sub5').fadeIn();
@@ -47,11 +43,7 @@ $('.king').click(function(){
             left: "0%"
         });
         $(".dsub5").animate({
-<<<<<<< HEAD
             height:'100px',
-=======
-            height:'250px',
->>>>>>> ba0adebc1fd43254ed5e01cf9ea9e95d0c2415f8
             width: '20%',
         });
         $('.sub5').fadeIn();
