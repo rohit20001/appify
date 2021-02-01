@@ -239,21 +239,18 @@ button:hover{
     align-content: center;
 }
 .dsub5{
-    margin: 2% 7%;
+    margin: 2% 5%;
     display: inline-block;
     height: 100px;
-    width: 15%;
+    width: 20%;
     background-color: linen;
-    overflow: scroll;
+    overflow: auto;
     position: relative;
 }
 .fa-angle-left,.fa-angle-right{
     color: white;
 }
 @media only screen and (max-width: 650px) {
-    table{
-        float: none;
-    }
     .detail2{
         display: block;
         width: 100%;
@@ -281,12 +278,18 @@ button:hover{
         display:block;
         width: 100%;
     }
-    .fa-angle-left,.fa-angle-right{
-    /* display: none; */
+    .fa-angle-left,.fa-angle-right,.scrbtn{
+     display: none; 
     }
-    .sub5{
+    .head5{
         display: block;
-        width: 75%;
+        width: 100%;
+        height: 20vh%;
+        overflow: auto;
+    }
+    .dsub5{
+        display: block;
+        width: 80%;
         margin: auto;
         margin-top:5px;
     }

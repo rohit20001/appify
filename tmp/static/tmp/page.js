@@ -22,7 +22,7 @@ $('.king').click(function(){
         });
         $(".dsub5").animate({
             height:'100px',
-            width: '15%',
+            width: '20%',
         });
         $('.sub5').fadeIn();
 
@@ -44,7 +44,7 @@ $('.king').click(function(){
         });
         $(".dsub5").animate({
             height:'100px',
-            width: '15%',
+            width: '20%',
         });
         $('.sub5').fadeIn();
     });
