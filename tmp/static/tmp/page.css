@@ -241,7 +241,11 @@ button:hover{
 .dsub5{
     margin: 2% 5%;
     display: inline-block;
+<<<<<<< HEAD
     height: 100px;
+=======
+    height: 250px;
+>>>>>>> ba0adebc1fd43254ed5e01cf9ea9e95d0c2415f8
     width: 20%;
     background-color: linen;
     overflow: auto;
@@ -278,6 +282,7 @@ button:hover{
         display:block;
         width: 100%;
     }
+<<<<<<< HEAD
     .fa-angle-left,.fa-angle-right,.scrbtn{
      display: none; 
     }
@@ -286,6 +291,10 @@ button:hover{
         width: 100%;
         height: 20vh%;
         overflow: auto;
+=======
+    .fa-angle-left,.fa-angle-right{
+    display: none;
+>>>>>>> ba0adebc1fd43254ed5e01cf9ea9e95d0c2415f8
     }
     .dsub5{
         display: block;

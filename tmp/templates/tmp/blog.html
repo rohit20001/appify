@@ -16,7 +16,7 @@
                 <div style="background-color:#F8F2ED">
                     <a class="acss" href="{% url 'post' post.id %}">
                 <div class="flex">
-                <div style="width: 30%" class="sameRow1">
+                <div class="width30 sameRow1">
                     {%load static%}
                         <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="240rem" height="160rem" >
                 </div>
@@ -106,7 +106,7 @@
             </div>
             <div class="boxHead"><b>Projects</b></div>
             <hr class="hrcssright">
-            <div style="margin-left:4%;" class="containerk">
+            <div class="m4 containerk">
                 <!-- use loop here -->
                 {% for i in projec|slice:"0:3" %}
                 <a sclass="acss" href="/projects/?page={{i.id|add:'-1'}}">
