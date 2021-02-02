@@ -92,7 +92,7 @@
         }
         .slide{
           width: 20%;
-          transition: 0.6s;
+          transition: 0.3s;
         }
         .slide img{
           width: 100%;
@@ -100,7 +100,6 @@
         }
         #r1:checked ~ .s1{
           margin-left: 0%;
-          background: #fff;
         }
         #r2:checked ~ .s2{
           margin-left: -20%;
@@ -108,6 +107,36 @@
         #r3:checked ~ .s3{
           margin-left: -40%;
         }
+      
+      .popup{
+        background: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .popup-content{
+        height: 400px;
+        width: 700px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        position: relative;
+      }
+      .close{
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+        cursor: pointer;
+      }
 
     </style>
  {%endblock%}
@@ -130,7 +159,14 @@
       <div style="background-color:#eeeedd;margin-top: 40px;width: 100%;height: 430px;">
       <div class="square" style="margin-top: 20px;">
         <div style="margin-left: 150px">Name<br><p>bsjafhgohsixkjjxknkjbijlfhjxcbjbf<br>bjbgjbigbrwjiabfbfjhfj<br>
-        <a href="">ReadFullArticle</a></p></div>
+        <a href="" id="button">ReadFullArticle</a></p></div>
+        <div class="popup">
+          <div class="popup-content">
+            <div style=" width: 100px; height: 100px;padding: 2px;border: solid black;background-color: white;margin: 0;"></div>
+            <img src="{% static 'tmp\media\close.jpg' %}" alt="" class="close">
+            <p>lhfjshjbbjsbejdghfsfdbjgsbiuehdfiehiushuihuihfishghfhsghehuifhu<br>jrbaehjahjgbhjwbfhsbdshjvawhsbhjfbewhj</p>
+          </div>
+        </div>
         <div style="width: 400px; margin-left: 150px; background-color: black;height: 1px;"></div>
       </div>
       <div class="square" style="margin-top: 40px;">
@@ -191,5 +227,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     -->
+    <script>
+      document.getElementById("button").addEventListener("click",function(){
+        document.querySelector(".popup").style.display = "flex";
+      })
+      document.querySelector(".close").addEventListener("click",function(){
+        document.querySelector(".popup").style.display = "none";
+      })
+    </script>
   {% endblock %}
 </html>
