@@ -48,9 +48,14 @@
         <a href="{% url 'blog' %}"><button class="btn">Blogs</button></a>
         <a href="{% url 'projects' %}"><button class="btn">Projects</button></a>
         <a href="#"><button class="btn">Contact us</button></a>
+        {% if user.is_authenticated %}
         <button class="icon"><i class="fas fa-bars"></i></button>
-        <a href="#"><button  class="login">Login</button></a>
-        <a href="#"><button  class="sign">Sign Up</button></a>
+        <a href="{% url 'logout' %}"><button  class="login">LogOut</button></a>
+        <a href="{% url 'signup' %}"><button  class="sign">Dashboard</button></a>
+        {% else %}
+        <a href="{% url 'login' %}"><button  class="login">Log In</button></a>
+        <a href="{% url 'signup' %}"><button  class="sign">Sign Up</button></a>
+  {% endif %}
         <div class="togle" id="togle">
             <li><a href="#"><button class="btn1">Home</button></a></li>
             <li><a href="#"><button class="btn1">Courses</button></a></li>
@@ -59,6 +64,7 @@
             <li><a href="#"><button class="btn1">Contact Us</button></a></li>
         </div>
     </div>
+
     {% block body %} {%endblock%}
     <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
             <path fill="#368F8B" fill-opacity="1"
