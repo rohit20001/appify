@@ -11,7 +11,6 @@ def page1(request):
 
 def page2(request):
     return render(request,"tmp/page2.html",)
-
 def signup(request):
     if request.method == 'POST':
         first_name = request.POST['first_name']
