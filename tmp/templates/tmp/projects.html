@@ -10,16 +10,18 @@
         <div class="sameRow1"><div class="boxHead mainhead"><b>Some Ideas For Project</b></div><hr class="hrcss">
             <div class="containerk">
                 <!-- Give loop for projects-->
-                {% for i in page_obj %}
+                {% for post in page_obj %}
                 <div style="background-color:#F8F2ED">
+                    <a class="acss" href="{% url 'post' post.id %}">
                 <div class="flex">
                 <div class="width30 sameRow1">
                     {%load static%}
-                        <img src='/media/{{i.projectImage}}' alt="Motivational picture" width="240rem" height="150rem" >
+                        <img src='/media/{{post.projectImage}}' alt="Motivational picture" width="240rem" height="160rem" >
                 </div>
-                    <div class="width70 sameRow2"><h2 class="m4">{{i.head}}</h2><p class="contentcssp">{{i.content|safe}}</p></div>
+                    <div class="sameRow2 block70"><div class="m4"><h5>{{ post.head|safe }}</h5><p class="contentcss">{{ post.content|safe }}</p></div></div>
                 </div>
-                <span class="floatright"> <i>By- {{ i.postedBy_project }}</i></span>
+                    </a>
+                <span> <i class="floatright">By- {{ post.postedBy_project }}</i></span><br>
                 <div class="mt1">
                 Share on these platforms
                 <i class="fab fa-facebook-f" ></i>
@@ -28,6 +30,7 @@
                 </div>
                 <hr class="hrcss100">
                 </div>
+
 
                 {% endfor %}
             </div>

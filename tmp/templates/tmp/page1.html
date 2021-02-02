@@ -3,6 +3,12 @@
 {% block title %} home {%endblock%}
 {% block body %}
     <!----upper container -->
+    {% for message in messages %}
+      <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong>{{message}}</strong>
+  </div>
+      {% endfor %}
     <div class="king">
         <div class="upper">
             <div class="detail1">

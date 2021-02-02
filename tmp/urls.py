@@ -11,4 +11,7 @@ urlpatterns = [
     path('courses/', views.courses, name="courses"),
     path('blog/post/<int:post_id>/', views.post, name="post"),
     path('projects/',views.projects,name="projects"),
+    path('signup/', views.signup, name="signup"),
+    path('login/', views.login, name="login"),
+    path('logout/',views.logout_view,name ="logout"),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

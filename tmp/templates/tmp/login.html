@@ -5,14 +5,21 @@
 {%endblock%}
 {% block title %} Sign Up {%endblock%}
 {% block body %}
+{% for message in messages %}
+      <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong>{{message}}</strong>
+  </div>
+      {% endfor %}
  <div class="kingform">
     <div class="box_1">
        <p> Log In to your Lennister Account</p>
         <hr>
-        <form action="">
-            <input type="email" name="" id="" placeholder="Email">
-            <input type="password" name="" id="" placeholder="Password"><br>
-            <input type="submit" name="" id="" value="Log In">
+        <form method="post" >
+            {% csrf_token %}
+            <input type="email" name="username" id="ee" placeholder="Email">
+            <input type="password" name="password" id="pp" placeholder="Password"><br>
+            <input type="submit" name="log" id="ll" value="Log In">
         </form>
         <hr>
         <div class="joker">
