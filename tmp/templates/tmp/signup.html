@@ -5,16 +5,26 @@
 {% endblock %}
 {% block title %} Sign Up {% endblock %}
 {% block body %}
+{% for message in messages %}
+      <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong>{{message}}</strong>
+  </div>
+      {% endfor %}
  <div class="kingform">
     <div class="box_1">
        <p> Sign UP and Start learning</p>
         <hr>
-        <form action="" class="form1">
-            <input type="text" name="" id="f" placeholder="Full Name" class="sinput">
-            <input type="tel" name="" id="p" placeholder="Phone" class="sinput">
-            <input type="email" name="" id="e" placeholder="Email" class="sinput">
-            <input type="password" name="" id="ps" placeholder="Password" class="sinput"><br>
-            <input type="button" name="" id="sp" value="Sign Up" class="sinputbtn sinput">
+        <form method="post" class="form1">
+            {% csrf_token %}
+            <input type="text" name="first_name" id="f" placeholder="First Name" class="sinput">
+            <input type="text" name="last_name" id="l" placeholder="Last Name" class="sinput">
+            <input type="tel" name="phone" id="p" placeholder="Phone" class="sinput">
+            <input type="email" name="email" id="e" placeholder="Email" class="sinput">
+            <input type="password" name="password1" id="ps" placeholder="Password" class="sinput"><br>
+            <input type="password" name="password2" id="psa" placeholder="Re-enter Password" class="sinput"><br>
+            {% csrf_token %}
+            <input type="submit" name="signup" id="sp" value="Sign Up" class="sinputbtn sinput">
         </form>
         <hr>
         <div class="joker">
