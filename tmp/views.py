@@ -7,7 +7,7 @@ def page1(request):
     return render(request,"tmp/page1.html",)
 
 def page2(request):
-    return render(request,"tmp/signup.html",)
+    return render(request,"tmp/page2.html",)
 
 def courses(request):
     return render(request,"tmp/courses.html",)
