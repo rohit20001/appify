@@ -167,6 +167,9 @@ margin-top:-1rem;
 .contentcss p{
     
 }
+.tbtn{
+    display:none;
+}
 @media only screen and (max-width: 650px){
     .head_all{
         display: block;
@@ -175,4 +178,17 @@ margin-top:-1rem;
     .center{
         padding:10px 0 10px 0;
     }
+    .containerk{
+        width: 100%;
+    }
+    .hidden{
+        display: none;
+    }
+    .tbtn{
+        display:inline-block;
+        position: absolute;
+        right: 0;
+        background-color: inherit;
+    }
 }
+

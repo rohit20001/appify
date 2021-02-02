@@ -1,13 +1,13 @@
 {%extends 'tmp/base.html' %}
 {% block head%}{%load static%}
     <link rel="stylesheet" href="{% static 'tmp/blog.css' %}">
-
+    <link rel="stylesheet" href="{% static 'tmp/style.css' %}">
 {%endblock%}
 {% block title %} Blog | {{ post.title }} {%endblock%}
 {% block body %}
 
 <div class="center" class="containerk" >
-    <div class="flex">
+    <div class="flex .head_all">
         <div class="sameRow1"><span class="titlesize"> {{ post.title }}<hr class="hrcssright"></span>
             <div class="upperpara"><p>{{ post.content_upper_para|safe }}</p>
                 {%load static%}
@@ -50,9 +50,9 @@
                 <i class="fab fa-instagram" ></i>
                 <i class="fab fa-twitter" ></i>
             </div>
-            <div class="boxHead"><b>Trending</b></div>
+            <div class="boxHead"><b>Trending</b><button class="tbtn" id="tbtn1"><i class="fas fa-sort-down"></i></button></div>
             <hr class="hrcssright">
-            <div class="m4 containerk">
+            <div class="m4 containerk hidden" id="hide1">
                 <!-- use loop here -->
                 {% for post in x|slice:"0:3" %}
                 <a class="acss" href="{% url 'post' post.id %}">
@@ -69,9 +69,9 @@
 
                 <span class="floatright"><a href="#"> View all</a></span>
             </div>
-            <div class="boxHead"><b>Projects</b></div>
+            <div class="boxHead"><b>Projects</b><button class="tbtn" id="tbtn2"><i class="fas fa-sort-down"></i></button></div>
             <hr class="hrcssright">
-            <div class="m4 containerk">
+            <div class="m4 containerk hidden" id="hide2">
                 <!-- use loop here -->
                 {% for i in projec|slice:"0:3" %}
                 <a class="acss" href="/projects/?page={{i.id|add:'-1'}}">
@@ -87,9 +87,9 @@
                 <span class="floatright"><a href="#"> View all</a></span>
             </div>
 
-            <div class="boxHead"><b>Stories</b></div>
+            <div class="boxHead"><b>Stories</b><button class="tbtn" id="tbtn3"><i class="fas fa-sort-down"></i></button></div>
             <hr class="hrcssright">
-            <div class="m4 containerk">
+            <div class="m4 containerk hidden" id="hide3">
                 <!-- use loop here -->
                 <div class="flex">
                     <div class="width45 sameRow1">
@@ -104,5 +104,26 @@
         </div>
     </div>
 </div>
-
+<script>
+    $(document).ready(function(){
+        if(window.innerWidth < 650){
+        $("#tbtn1").click(function(){
+            $("#hide1").toggle();
+            $("#hide2").hide();
+            $("#hide3").hide();
+        });
+        $("#tbtn2").click(function(){
+            $("#hide2").toggle();
+            $("#hide1").hide();
+            $("#hide3").hide();
+            
+        });
+        $("#tbtn3").click(function(){
+            $("#hide3").toggle();
+            $("#hide2").hide();
+            $("#hide1").hide();
+        });
+    }
+    });
+</script>
 {%endblock%}
