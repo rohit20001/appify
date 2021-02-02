@@ -1,88 +1,101 @@
 {%extends 'tmp/base.html' %}
 {% block head%}{%load static%}
-    <link rel="stylesheet" href="{% static 'tmp/blog.css' %}">
-    <link rel="stylesheet" href="{% static 'tmp/style.css' %}">
+<link rel="stylesheet" href="{% static 'tmp/blog.css' %}">
+<link rel="stylesheet" href="{% static 'tmp/style.css' %}">
 {%endblock%}
 {% block title %} Blogs {%endblock%}
 {% block body %}
 
-<div class="center" class="containerk" >
+<div class="center" class="containerk">
     <div class="flex">
-        <div class="sameRow1"><div class="boxHead mainhead" ><b>Blogs</b></div><hr class="hrcss">
-            <div class="containerk" >
+        <div class="sameRow1">
+            <div class="boxHead mainhead"><b>Blogs</b></div>
+            <hr class="hrcss">
+            <div class="containerk">
                 <!-- Give loop for projects-->
                 {% for post in page_obj %}
 
                 <div style="background-color:#F8F2ED">
                     <a class="acss" href="{% url 'post' post.id %}">
-                <div class="flex">
-                <div class="width30 sameRow1">
-                    {%load static%}
-                        <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="240rem" height="160rem" >
-                </div>
-                    <div class="sameRow2 block70"><div class="m4"><h5>{{ post.title|safe }}</h5><p class="contentcss">{{ post.content_upper_para|truncatewords:50|safe }}</p></div></div>
-                </div>
+                        <div class="flex head_all">
+                            <div class="width30 sameRow1">
+                                {%load static%}
+                                <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="100%"
+                                    height="160rem">
+                            </div>
+                            <div class="sameRow2 block70">
+                                <div class="m4">
+                                    <h5>{{ post.title|safe }}</h5>
+                                    <p class="contentcss">{{ post.content_upper_para|truncatewords:25|safe }}</p>
+                                </div>
+                            </div>
+                        </div>
                     </a>
-                <span> <i class="floatright">By- {{ post.postedBy }}</i></span><br>
+                    <span> <i class="floatright">By- {{ post.postedBy }}</i></span><br>
                     <span class="floatright"> <i>{{ post.posted_date|date:"F d, Y" }}</i></span>
-                <div class="mt1">
-                Share on these platforms
-                <i class="fab fa-facebook-f" ></i>
-                <i class="fab fa-instagram" ></i>
-                <i class="fab fa-twitter" ></i>
-                </div>
-                <hr class="hrcss100">
+                    <div class="mt1">
+                        Share on these platforms
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <hr class="hrcss100">
                 </div>
 
                 {% endfor %}
             </div>
 
-        <div class="container">
-    <div class="row mt-5 mb-n2">
-        <div class="col-12 text-center text-muted">
-            <p><span>Showing page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></p>
-        </div>
-    </div>
+            <div class="container">
+                <div class="row mt-5 mb-n2">
+                    <div class="col-12 text-center text-muted">
+                        <p><span>Showing page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></p>
+                    </div>
+                </div>
 
-    <ul class="pagination pagination-sm mb-5 justify-content-center">
-        {% if page_obj.has_previous %}
-            <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
-        {% endif %}
+                <ul class="pagination pagination-sm mb-5 justify-content-center">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+                    <li class="page-item"><a class="page-link"
+                            href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                    {% endif %}
 
-        {% for num in page_obj.paginator.page_range %}
-            {% if page_obj.number == num %}
-                <li class="page-item active"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
-            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
-            {% endif %}
-        {% endfor %}
+                    {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                    <li class="page-item active"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %} <li class="page-item"><a
+                            class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                        {% endif %}
+                        {% endfor %}
 
-        {% if page_obj.has_next %}
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
-        {% endif %}
-    </ul>
-</div>
+                        {% if page_obj.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last
+                                &raquo;</a></li>
+                        {% endif %}
+                </ul>
+            </div>
 
 
-             <div class="boxHead giveidea"><b>Give Your Ideas</b></div>
+            <div class="boxHead giveidea"><b>Give Your Ideas</b></div>
             <hr class="hrcss">
             <form action="#">
                 <input type="name" name="uid1" id="uidName" placeholder="Enter Your name" class="width30"><br><br>
                 <input type="email" name="uid2" id="uidEmail" placeholder="Email" class="width30"><br><br>
                 <textarea rows="4" cols="50" placeholder="Comment here..."></textarea>
-  <br><br>
-                <input type="button" name="submit" id="sub" placeholder="Submit" value="Submit" style="background-color:#DDBEA8">
+                <br><br>
+                <input type="button" name="submit" id="sub" placeholder="Submit" value="Submit"
+                    style="background-color:#DDBEA8">
             </form>
 
         </div>
 
-        <div class="sameRow2"><div class="m4">
+        <div class="sameRow2">
+            <div class="m4">
                 Follow us on
-                <i class="fab fa-facebook-f" ></i>
-                <i class="fab fa-instagram" ></i>
-                <i class="fab fa-twitter" ></i>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
             </div>
             <div class="boxHead"><b>Trending</b></div>
             <hr class="hrcssright">
@@ -91,13 +104,17 @@
                 {% for post in page_obj|slice:"0:3" %}
 
                 <a class="acss" href="{% url 'post' post.id %}">
-                <div class="mb1 flex">
-                    <div class="width45 sameRow1">
-                        {%load static%}
-                        <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="160rem" height="100rem" >
+                    <div class="mb1 flex">
+                        <div class="width45 sameRow1">
+                            {%load static%}
+                            <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="100%"
+                                height="100rem">
+                        </div>
+                        <div class="width55 sameRow2">
+                            <h6>{{post.title}}</h6>
+                            <p class="mt4 mtn">{{ post.content_upper_para|truncatewords:10|safe }}</p>
+                        </div>
                     </div>
-                    <div class="width55 sameRow2"><h6>{{post.title}}</h6><p class="mt4 mtn">{{ post.content_upper_para|truncatewords:10|safe }}</p></div>
-                </div>
                 </a>
                 {% endfor %}
 
@@ -110,14 +127,18 @@
                 <!-- use loop here -->
                 {% for i in projec|slice:"0:3" %}
                 <a sclass="acss" href="/projects/?page={{i.id|add:'-1'}}">
-                <div class="mb1 flex">
-                    <div class="width45 sameRow1">
-                        {%load static%}
-                        <img src='/media/{{i.projectImage}}' alt="Motivational picture" width="160rem" height="100rem" >
+                    <div class="mb1 flex">
+                        <div class="width45 sameRow1">
+                            {%load static%}
+                            <img src='/media/{{i.projectImage}}' alt="Motivational picture" width="100%"
+                                height="100rem">
+                        </div>
+                        <div class="width55 sameRow2">
+                            <h6>{{i.head}}</h6>
+                            <p class="mt4">{{i.content|truncatewords:7|safe}}</p>
+                        </div>
                     </div>
-                    <div class="width55 sameRow2"><h6>{{i.head}}</h6><p class="mt4">{{i.content|truncatewords:7|safe}}</p></div>
-                </div>
-                    </a>
+                </a>
                 {% endfor %}
                 <span class="floatright"><a href="{% url 'projects' %}"> View all</a></span>
             </div>
@@ -130,9 +151,12 @@
                 <div class="mb1 flex">
                     <div class="width45 sameRow1">
                         {%load static%}
-                        <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture" width="160rem" height="100rem" >
+                        <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture" width="100%"
+                            height="100rem">
                     </div>
-                    <div class="width55 sameRow2"><p class="m4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quae?</p></div>
+                    <div class="width55 sameRow2">
+                        <p class="m4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quae?</p>
+                    </div>
                 </div>
                 <span class="floatright"><a href="#"> View all</a></span>
             </div>

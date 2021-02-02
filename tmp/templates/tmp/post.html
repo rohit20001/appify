@@ -11,7 +11,7 @@
         <div class="sameRow1"><span class="titlesize"> {{ post.title }}<hr class="hrcssright"></span>
             <div class="upperpara"><p>{{ post.content_upper_para|safe }}</p>
                 {%load static%}
-                        <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="560rem" height="420rem" class="centerimage" style="margin-top:3rem;margin-bottom:3rem">
+                        <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="90%" height="420rem" class="centerimage" style="margin-top:3rem;margin-bottom:3rem">
                 <p>{{ post.content_lower_para|safe }}</p>
             </div>
             <div class="mt3">
@@ -27,7 +27,7 @@
                 <div class="flex">
                     <div class="width30 sameRow1">
                         {%load static%}
-                        <img src='/media/{{post.authorImage}}' alt="Motivational picture" width="250rem" height="190rem" >
+                        <img src='/media/{{post.authorImage}}' alt="Motivational picture" width="90%" height="190rem" >
                     </div>
                     <div class="width70 sameRow2"><h2 class="m4">{{post.postedBy}}</h2><p class="m4">{{post.aboutAuthor|safe}}</p></div>
                 </div>
@@ -60,7 +60,7 @@
                 <div class="mb1 flex">
                     <div class="width45 sameRow1">
                         {%load static%}
-                        <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="160rem" height="100rem">
+                        <img src='/media/{{post.blogImage}}' alt="Motivational picture" width="90%" height="100rem">
                     </div>
                     <div class="width55 sameRow2"><h6>{{post.title}}</h6><p class="paracut">{{ post.content_upper_para|truncatewords:10|safe }}</p></div>
                 </div>
@@ -78,7 +78,7 @@
                 <div class="mb1 flex">
                     <div class="width45 sameRow1">
                         {%load static%}
-                        <img src='/media/{{i.projectImage}}' alt="Motivational picture" width="160rem" height="100rem" >
+                        <img src='/media/{{i.projectImage}}' alt="Motivational picture" width="90%" height="100rem" >
                     </div>
                     <div class="width55 sameRow2"><h6>{{i.head}}</h6><p class="m4" >{{i.content|truncatewords:7|safe}}</p></div>
                 </div>
@@ -94,7 +94,7 @@
                 <div class="flex">
                     <div class="width45 sameRow1">
                         {%load static%}
-                        <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture" width="160rem" height="100rem" >
+                        <img src="{% static 'tmp/Run__001.png' %}" alt="Motivational picture" width="90%" height="100rem" >
                     </div>
                     <div class="width55 sameRow2"><p class="m4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quae?</p></div>
                 </div>
