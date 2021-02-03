@@ -6,8 +6,8 @@
 {% block body %}
 
 <div class="center" class="containerk" >
-    <div class="flex">
-        <div class="sameRow1"><div class="boxHead mainhead"><b>Some Ideas For Project</b></div><hr class="hrcss">
+    <div class="flex head_all">
+        <div class="sameRow1 head_all"><div class="boxHead mainhead"><b>Some Ideas For Project</b></div><hr class="hrcss">
             <div class="containerk">
                 <!-- Give loop for projects-->
                 {% for post in page_obj %}
@@ -76,15 +76,15 @@
 
         </div>
 
-        <div class="sameRow2"><div class="m4">
+        <div class="sameRow2 head_all"><div class="m4">
                 Follow us on
                 <i class="fab fa-facebook-f" ></i>
                 <i class="fab fa-instagram" ></i>
                 <i class="fab fa-twitter" ></i>
             </div>
-            <div class="boxHead"><b>Trending</b></div>
+            <div class="boxHead"><b>Trending</b><button class="tbtn" id="tbtn1"><i class="fas fa-sort-down"></i></button></div>
             <hr class="hrcssright">
-            <div class="m4 containerk">
+            <div class="m4 containerk hidden" id="hide1">
                 <!-- use loop here -->
                 {% for post in x|slice:"0:3" %}
                 <a class="acss" href="{% url 'post' post.id %}">
@@ -102,9 +102,9 @@
 
                 <span class="floatright"><a href="{% url 'blog' %}"> View all</a></span>
             </div>
-            <div class="boxHead"><b>Blogs</b></div>
+            <div class="boxHead"><b>Blogs</b><button class="tbtn" id="tbtn2"><i class="fas fa-sort-down"></i></button></div>
             <hr class="hrcssright">
-            <div class="m4 containerk">
+            <div class="m4 containerk hidden" id="hide2">
                 <!-- use loop here -->
                 {% for post in x|slice:":3:-1" %}
                 <a class="acss" href="{% url 'post' post.id %}">
@@ -121,9 +121,9 @@
                 <span class="floatright"><a href="{% url 'blog' %}"> View all</a></span>
             </div>
 
-            <div class="boxHead"><b>Stories</b></div>
+            <div class="boxHead"><b>Stories</b><button class="tbtn" id="tbtn3"><i class="fas fa-sort-down"></i></button></div>
             <hr class="hrcssright">
-            <div class="m4 containerk">
+            <div class="m4 containerk hidden" id="hide3">
                 <!-- use loop here -->
                 {% for i in trend %}
                 <div class="mb1 flex">
@@ -140,4 +140,30 @@
         </div>
     </div>
 </div>
+
+<script>
+     $(document).ready(function(){
+        if(window.innerWidth < 650){
+        $("#tbtn1").click(function(){
+            // console.log('clicked');
+            $("#hide1").toggle();
+            $("#hide2").hide();
+            $("#hide3").hide();
+        });
+        $("#tbtn2").click(function(){
+            // console.log('clicked');
+            $("#hide2").toggle();
+            $("#hide1").hide();
+            $("#hide3").hide();
+            
+        });
+        $("#tbtn3").click(function(){
+            // console.log('clicked');
+            $("#hide3").toggle();
+            $("#hide2").hide();
+            $("#hide1").hide();
+        });
+    }
+    });
+</script>
 {%endblock%}
