@@ -1,195 +1,346 @@
 {%extends 'tmp/base.html' %}
-{% block head%}    {%load static%}
+{% block head%} {%load static%}
 
-    <!-- Bootstrap CSS -->
+<!-- Bootstrap CSS -->
 
 
-    <style>
-        .square{
-          width: 100px;
-      height: 100px;
-      padding: 2px;
-      border: solid black;
-      background-color: white;
-      margin: 0;
-        }
-        .container{
-          position: relative;
-          width: 90%;
-          margin: 100px auto;
-          display: flex;
-          justify-content: center;
-        }
-        .container .box{
-          position: relative;
-          width: calc(300px - 30px);
-          height: calc(200px - 30px);
-          float: left;
-          margin-left: 30px;
-          margin-right: 0px;
-          border: solid black;
-          margin: 40px 30px 0px 40px;
-          text-align: center;
-        }
+<style>
+  .square {
+    width: 20%;
+    height: 100px;
+    padding: 2px;
+    border: solid black;
+    background-color: white;
+    margin: 0;
+  }
+  .square1{
+    position: relative;
+    display: inline-block;
+    width:20%;
+    height: 20vh;
+    background-color: white;
+    border-style: solid;
+  }
+  .context1{
+    position:relative;
+    display: inline-block;
+    width: 75%;
+  }
 
-        .sub{
-    margin: 2% 2%;
+  .container {
+    position: relative;
+    width: 100%;
+    /* margin: 100px auto; */
+    display: block;
+    padding: auto;
+    align-content: center;
+    margin-bottom:2%;
+  }
+
+  .container .box {
+    position: relative;
+    width: calc(300px - 30px);
+    height: calc(200px - 30px);
+    float: left;
+    margin-left: 30px;
+    margin-right: 0px;
+    border: solid black;
+    margin: 40px 30px 0px 40px;
+    text-align: center;
+  }
+
+  .sub {
+    /* left: 2%; */
+    position: relative;
+    /* margin: 2% 2%; */
     display: inline-block;
     height: 99px;
-    width: 140px;
+    width: 20%;
     background-color: white;
-}
-.dot {
-  height: 15px;
-  width: 15px;
-  background-color:white;
-  border-radius: 50%;
-  display: inline-block;
-}
-.box1 {
-  width: 60%;
-  float:left
-}
-.slidershow{
-          width:700px;
-          height: 400px;
-          overflow: hidden;
-          margin-top: 250px;
-        }
-        .middle{
-          position: absolute;
-          width:700px;
-          height: 400px;
-          left: 50%;
-          transform: translate(-50%,-50%);
-        }
-        .navigation{
-          position: absolute;
-          bottom: 20px;
-          left: 50%;
-          transform: translateX(-50%);
-          display: flex;
-        }
-        .bar{
-          width: 50px;
-          height: 10px;
-          border: 2px solid #fff;
-          margin: 6px;
-          cursor: pointer;
-          transition: 0.4s;
-        }
-        .bar:hover{
-          background: #fff;
-        }
-        input[name="r"]{
-          position: absolute;
-          visibility: hidden;
-        }
-        .slides{
-          width: 500%;
-          height: 100%;
-          display: flex;
-        }
-        .slide{
-          width: 20%;
-          transition: 0.6s;
-        }
-        .slide img{
-          width: 100%;
-          height: 100%;
-        }
-        #r1:checked ~ .s1{
-          margin-left: 0%;
-          background: #fff;
-        }
-        #r2:checked ~ .s2{
-          margin-left: -20%;
-        }
-        #r3:checked ~ .s3{
-          margin-left: -40%;
-        }
+  }
 
-    </style>
- {%endblock%}
+  .dot {
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .box1 {
+    width: 60%;
+    float: left
+  }
+
+  .slidershow {
+    width: 700px;
+    height: 400px;
+    overflow: hidden;
+    margin-top: 250px;
+  }
+
+  .middle {
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+  .bar {
+    width: 50px;
+    height: 10px;
+    border: 2px solid #fff;
+    margin: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  .bar:hover {
+    background: #fff;
+  }
+
+  input[name="r"] {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .slides {
+    width: 500%;
+    height: 100%;
+    display: flex;
+  }
+
+  .slide {
+    width: 20%;
+    transition: 0.6s;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+  }
+
+  #r1:checked~.s1 {
+    margin-left: 0%;
+    background: #fff;
+  }
+
+  #r2:checked~.s2 {
+    margin-left: -20%;
+  }
+
+  #r3:checked~.s3 {
+    margin-left: -40%;
+  }
+
+  .btn1 {
+    display: none;
+  }
+
+  .dot3 {
+    animation: dotani 4s linear 3s infinite normal both;
+  }
+
+  .dot2 {
+    animation: dotani 4s linear 2s infinite normal both;
+  }
+
+  .dot1 {
+    animation: dotani 4s linear 1s infinite normal both;
+  }
+
+  @keyframes dotani {
+    0% {
+      background-color: rgba(162, 0, 255, 0.308);
+    }
+
+    25% {
+      background-color: rgb(255, 0, 191);
+    }
+
+    50% {
+      background-color: rgb(136, 14, 14);
+    }
+
+    100% {
+      background-color: rgb(0, 247, 255);
+    }
+  }
+  .box_1{
+    position: relative;
+    display: inline-block;
+    width:25%;
+    height: 35vh;
+    border-style: solid;
+    margin: 0 3%;
+  }
+
+  @media only screen and (max-width:650px) {
+    .btn1 {
+      display: inline;
+      background-color: inherit;
+      padding: 0;
+      margin: 0;
+      width: 19%;
+      border-style: none;
+    }
+
+    .box2 .sub {
+      display: none;
+    }
+
+    .sub {
+      margin: 4% 0;
+      width: 59%;
+    }
+    .context1{
+      display: block;
+      width:100%;
+    }
+    .square1{
+      display:block;
+      width:40%;
+    }
+  }
+</style>
+{%endblock%}
 {% block title %} Page2 {%endblock%}
 {% block body %}
-    <div style="background-color:#e2eedd;width: 100%;height: 200px;" >
-      <div class="box2">
-      <span class="sub">Khjgh</span>
-      <span class="sub">kgftygk</span>
-      <span class="sub">hjgu</span>
-      <span class="sub">hjgu</span>
-      </div>
-      <div class="box3" style="margin-left: 50%;">
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span></div>
+<div style="background-color:#e2eedd;width: 100%;height: auto; padding-bottom:2%">
+  <div class="box2">
+    <button id="box1btn1" class="btn1"><i class="fas fa-chevron-left"></i></button>
+    <span class="sub" id="box1">Khjgh</span>
+    <span class="sub" id="box2">kgftygk</span>
+    <span class="sub" id="box3">hjgu</span>
+    <span class="sub" id="box4">hjgu2</span>
+    <button id="box1btn2" class="btn1"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="box3" style="margin-left: 50%;">
+    <span class="dot dot1"></span>
+    <span class="dot dot2"></span>
+    <span class="dot dot3"></span>
+  </div>
+</div>
+<h4 style="text-align: center; font-family: sans-serif; "> Topper's Talk</h4>
+<div style="width: 80px; text-align: center;margin-left: 720px; background-color: black;height: 3px;"></div>
+<div style="background-color:#eeeedd;margin-top: 40px;width: 100%;height: auto; padding-bottom: 10px;">
+  <div>
+    <div class="square1">
+      <!-- square -->
     </div>
-      <h4 style="text-align: center; font-family: sans-serif; "> Topper's Talk</h4>
-      <div style="width: 80px; text-align: center;margin-left: 720px; background-color: black;height: 3px;"></div>
-      <div style="background-color:#eeeedd;margin-top: 40px;width: 100%;height: 430px;">
-      <div class="square" style="margin-top: 20px;">
-        <div style="margin-left: 150px">Name<br><p>bsjafhgohsixkjjxknkjbijlfhjxcbjbf<br>bjbgjbigbrwjiabfbfjhfj<br>
-        <a href="">ReadFullArticle</a></p></div>
-        <div style="width: 400px; margin-left: 150px; background-color: black;height: 1px;"></div>
-      </div>
-      <div class="square" style="margin-top: 40px;">
-        <div style="margin-left: 150px">Name<br><p>bsjafhgohsixkjjxknkjbijlfhjxcbjbf<br>bjbgjbigbrwjiabfbfjhfj<br>
-          <a href="">ReadFullArticle</a></p></div>
-        <div style="width: 400px; margin-left: 150px; background-color: black;height: 1px;"></div></div>
-      <div class="square" style="margin-top: 40px;">
-        <div style="margin-left: 150px">Name<br><p>bsjafhgohsixkjjxknkjbijlfhjxcbjbf<br>bjbgjbigbrwjiabfbfjhfj<br>
-          <a href="">ReadFullArticle</a></p></div>
-        </div>
-      </div>
-      <h4 style="text-align: center; font-family: sans-serif; margin-top: 40px;">Direct Listen From Topper's</h4>
-      <div style="width: 80px; text-align: center;margin-left: 720px; background-color: black;height: 3px;"></div>
+    <div class="context1">
+      <span>Lorm ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eaque itaque neque magnam quos ad, c</span><br><span><a href="#">Read Full Article ..</a></span>
+    </div>
+  </div>
+
+  <div>
+    <div class="square1">
+      <!-- square -->
+    </div>
+    <div class="context1">
+<span>Lorm ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eaque itaque neque magnam quos ad, c</span><br><span><a href="#">Read Full Article ..</a></span>
+    </div>
+  </div>
+
+  <div>
+    <div class="square1">
+      <!-- square -->
+    </div>
+    <div class="context1">
+<span>Lorm ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eaque itaque neque magnam quos ad, c</span><br><span><a href="#">Read Full Article ..</a></span>
+    </div>
+  </div>
+</div>
+<h4 style="text-align: center; font-family: sans-serif; margin-top: 40px;">Direct Listen From Topper's</h4>
+<div style="width: 80px; text-align: center;margin-left: 720px; background-color: black;height: 3px;"></div>
 <div style="width: 100; height: 450px;">
-      <div class="slidershow middle">
-        <div class="slides">
-          <input type="radio" name="r" id="r1" checked>
-          <input type="radio" name="r" id="r2">
-          <input type="radio" name="r" id="r3">
-        <div class="slide s1">
-          <img src="{% static 'tmp\media\1.jpg' %}" alt="img1">
-        </div>
-        <div class="slide s2">
-          <img src="{% static 'tmp/media/3.jpg' %}" alt="img2">
-        </div>
-        <div class="slide s3">
-          <img src="{% static 'tmp/media/all.jpg' %}" alt="img3">
-        </div>
+  <div class="slidershow middle">
+    <div class="slides">
+      <input type="radio" name="r" id="r1" checked>
+      <input type="radio" name="r" id="r2">
+      <input type="radio" name="r" id="r3">
+      <div class="slide s1">
+        <img src="{% static 'tmp\media\1.jpg' %}" alt="img1">
       </div>
-      <div class="navigation">
-        <label for="r1" class="bar"></label>
-        <label for="r2" class="bar"></label>
-        <label for="r3" class="bar"></label>
+      <div class="slide s2">
+        <img src="{% static 'tmp/media/3.jpg' %}" alt="img2">
       </div>
+      <div class="slide s3">
+        <img src="{% static 'tmp/media/all.jpg' %}" alt="img3">
       </div>
     </div>
-      <h4 style="text-align: center; font-family: sans-serif; margin-top: 50px;">Blogs</h4>
-      <div style="width: 80px; text-align: center;margin-left: 720px; background-color: black;height: 3px;"></div>
+    <div class="navigation">
+      <label for="r1" class="bar"></label>
+      <label for="r2" class="bar"></label>
+      <label for="r3" class="bar"></label>
+    </div>
+  </div>
+</div>
+<h4 style="text-align: center; font-family: sans-serif; margin-top: 50px;">Blogs</h4>
+<div class="container" style="margin-top: 20px;">
+  <div class="box_1">kjvujyfuyj
+  </div>
+  <div class="box_1">jkgiug
+  </div>
+  <div class="box_1">klhgf
+  </div>
+</div>
 
-      <div class="container" style="margin-top: 20px;">
-        <div class="box">kjvujyfuyj
-        </div>
-        <div class="box">jkgiug
-        </div>
-        <div class="box">klhgf
-        </div>
-      </div>
 
 
+<!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Optional JavaScript; choose one of the two! -->
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     -->
-  {% endblock %}
-</html>
+<script>
+  $(document).ready(function () {
+    var i, x, y, z;
+    i = 1;
+    x = "#box" + i;
+    $(x).show();
+    $(x).css("display", "inline-block");
+    if (window.innerWidth < 650) {
+      $("#box1btn1").click(function () {
+        if (i > 1) {
+          i = i - 1;
+        }
+        x = "#box" + i;
+        y = "#box" + (i - 1);
+        z = "#box" + (i + 1);
+        $(x).show();
+        $(x).css("display", "inline-block");
+        $(y).hide();
+        $(z).hide();
+      });
+      $("#box1btn2").click(function () {
+        if (i < 4) {
+          i = i + 1;
+        }
+        x = "#box" + i;
+        y = "#box" + (i - 1);
+        z = "#box" + (i + 1);
+        $(x).show();
+        $(y).hide();
+        $(z).hide();
+        $(x).css("display", "inline-block");
+      });
+    }
+  });
+</script>
+{% endblock %}
