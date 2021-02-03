@@ -48,19 +48,21 @@
         <a href="{% url 'blog' %}"><button class="btn">Blogs</button></a>
         <a href="{% url 'projects' %}"><button class="btn">Projects</button></a>
         <a href="#"><button class="btn">Contact us</button></a>
-        {% if user.is_authenticated %}
         <button class="icon"><i class="fas fa-bars"></i></button>
+        {% if user.is_authenticated %}
         <a href="{% url 'logout' %}"><button  class="login">LogOut</button></a>
         <a href="{% url 'signup' %}"><button  class="sign">Dashboard</button></a>
         {% else %}
         <a href="{% url 'login' %}"><button  class="login">Log In</button></a>
         <a href="{% url 'signup' %}"><button  class="sign">Sign Up</button></a>
+        <button class="sign_icon"><i class="fas fa-sign-in-alt"></i></button>
   {% endif %}
         <div class="togle" id="togle">
-            <li><a href="#"><button class="btn1">Home</button></a></li>
-            <li><a href="#"><button class="btn1">Courses</button></a></li>
-            <li><a href="#"><button class="btn1">Story/Blogs</button></a></li>
-            <li><a href="#"><button class="btn1">Buy Courses</button></a></li>
+            <li><a href="{% url 'page1' %}"><button class="btn1">Home</button></a></li>
+            <li><a href="{% url 'courses' %}"><button class="btn1">Courses</button></a></li>
+            <li><a href="{% url 'page2' %}"><button class="btn1">Story</button></a></li>
+            <li><a href="{% url 'blog' %}"><button class="btn1">Blogs</button></a></li>
+            <li><a href="{% url 'projects' %}"><button class="btn1">Projects</button></a></li>
             <li><a href="#"><button class="btn1">Contact Us</button></a></li>
         </div>
     </div>

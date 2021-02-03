@@ -1,81 +1,90 @@
 {%extends 'tmp/base.html' %}
 {% block head%}{%load static%}
-    <style>
-        .box{
-    height: 6rem;
-    width: 100%;
-    background-color: #e2eedd;
-}
-.box .box1{
-    margin-left: 60%;
-    border-radius: 20%;
-    background-color: antiquewhite;
-}
-.box2{
-    width: 100%;
-    height: 700px;
-    background-color: rgb(253, 243, 234);
-}
-.box21{
-    width: 300px;
-    height: 150px;
-    padding: 2px;
-    margin-left: 20%;
-    left: 20%;
-    margin-top: 10px;
-}
-.box22{
-    width: 300px;
-    height: 150px;
-    padding: 2px;
-    margin-left: 20%;
-    margin-top: 20px;
-}
-.box23{
-    width: 200px;
-    height: 100px;
-    padding: 2px;
-    border: solid rgb(24, 24, 24);
-    background-color: white;
-    margin-top: 20px;
-}
-.box3{
-    width: 100%;
-    height:150px;
-    margin-top: 20px;
-    margin-bottom: 8%;
-    background-color:white;
-    margin-left: -5%;
-}
-.box31{
-    width: 150px;
-    height: 150px;
-    padding: 2px;
-    margin-left: 10%;
-    background-color: white;
-    margin-top: 20px;
-    float: left;
+<style>
+    .box {
+        height: 6rem;
+        width: 100%;
+        background-color: #e2eedd;
+    }
 
-}
-.box4{
-    margin-top: 32%;
-    background-color: violet;
-    width: 600px;
-    height: 300px;
-    padding: 2px;
-    background-color: white;
-    margin-left: 75%;
-    position:fixed;
-    background-color:#ffffff00;
+    .box .box1 {
+        margin-left: 60%;
+        border-radius: 20%;
+        background-color: antiquewhite;
+    }
 
-}
+    .box2 {
+        width: 100%;
+        height: 700px;
+        background-color: rgb(253, 243, 234);
+    }
 
-    </style>
+    .box21 {
+        width: 300px;
+        height: 150px;
+        padding: 2px;
+        margin-left: 20%;
+        left: 20%;
+        margin-top: 10px;
+    }
+
+    .box22 {
+        width: 300px;
+        height: 150px;
+        padding: 2px;
+        margin-left: 20%;
+        margin-top: 20px;
+    }
+
+    .box23 {
+        width: 200px;
+        height: 100px;
+        padding: 2px;
+        border: solid rgb(24, 24, 24);
+        background-color: white;
+        margin-top: 20px;
+    }
+
+    .box3 {
+        width: 100%;
+        height: 150px;
+        margin-top: 20px;
+        margin-bottom: 8%;
+        background-color: white;
+        margin-left: -5%;
+    }
+
+    .box31 {
+        width: 150px;
+        height: 150px;
+        padding: 2px;
+        margin-left: 10%;
+        background-color: white;
+        margin-top: 20px;
+        float: left;
+
+    }
+
+    .box4 {
+        margin-top: 32%;
+        background-color: violet;
+        width: 600px;
+        height: 300px;
+        padding: 2px;
+        background-color: white;
+        margin-left: 75%;
+        position: fixed;
+        background-color: #ffffff00;
+
+    }
+</style>
 {%endblock%}
 {% block title %} Courses {%endblock%}
 {% block body %}
-<div class="box4">
-<img src="{% static 'tmp/media/banner.png'%}" width="400px" height="200px"></div>
+<div class="queen">
+    <div class="box4">
+        <img src="{% static 'tmp/media/banner.png'%}" width="400px" height="200px">
+    </div>
 </div>
 <div class="box">
     Get a Membership of just at Rs. 100 and get unlimited Access to <br>
@@ -84,23 +93,36 @@
 </div>
 <div class="box2">
     <div style="width: 50%;height: 500px;float: left;">
-    <div class="box21"><img src="{% static 'tmp\media\python.jpg'%}" style="height: 142px; width: 292px;"></div>
-    <div class="box22"><img src="{% static 'tmp\media\basic.jpg'%}" style="height: 142px; width: 292px;"></div>
-    <div class="box22"><img src="{% static 'tmp\media\machine learning.jpg'%}" style="height: 142px; width: 292px;"></div>
-    <div class="box22"><img src="{% static 'tmp\media\data structure.png'%}" style="height: 142px; width: 292px;"></div>
+        <div class="box21"><img src="{% static 'tmp\media\python.jpg'%}" style="height: 142px; width: 292px;"></div>
+        <div class="box22"><img src="{% static 'tmp\media\basic.jpg'%}" style="height: 142px; width: 292px;"></div>
+        <div class="box22"><img src="{% static 'tmp\media\machine learning.jpg'%}" style="height: 142px; width: 292px;">
+        </div>
+        <div class="box22"><img src="{% static 'tmp\media\data structure.png'%}" style="height: 142px; width: 292px;">
+        </div>
     </div>
     <div style="width: 50%;height: 500px;float: right;">
         <div class="box22"><img src="{% static 'tmp\media\java.png'%}" style="height: 142px; width: 292px;"></div>
         <div class="box22"><img src="{% static 'tmp\media\C.png'%}" style="height: 142px; width: 292px;"></div>
         <div class="box22"><img src="{% static 'tmp\media\android.jpg'%}" style="height: 142px; width: 292px;"></div>
-        </div>
+    </div>
 </div>
 <div style="margin-top: 30px; text-align: center;text-size-adjust: 30px;">Benefits of these courses</div>
 <div class="box3">
-    <div class="box31"><img src="{% static 'tmp/media/certified.png'%}" width="150px" height="150px"><p align="center">Certified</p></div>
-    <div class="box31"><img src="{% static 'tmp/media/joker.png'%}" width="150px" height="150px"><p align="center">When You Want</p></div>
-    <div class="box31"><img src="{% static 'tmp/media/doubt.png'%}" width="150px" height="150px"><p align="center">Solve Doubts</p></div>
-    <div class="box31"><img src="{% static 'tmp/media/skills.png'%}" width="150px" height="150px"><p align="center">Gain Skills</p></div>
-    <div class="box31"><img src="{% static 'tmp/media/cheaps.png'%}" width="150px" height="150px"><p align="center">Cheap and Best</p></div>
+    <div class="box31"><img src="{% static 'tmp/media/certified.png'%}" width="150px" height="150px">
+        <p align="center">Certified</p>
+    </div>
+    <div class="box31"><img src="{% static 'tmp/media/joker.png'%}" width="150px" height="150px">
+        <p align="center">When You Want</p>
+    </div>
+    <div class="box31"><img src="{% static 'tmp/media/doubt.png'%}" width="150px" height="150px">
+        <p align="center">Solve Doubts</p>
+    </div>
+    <div class="box31"><img src="{% static 'tmp/media/skills.png'%}" width="150px" height="150px">
+        <p align="center">Gain Skills</p>
+    </div>
+    <div class="box31"><img src="{% static 'tmp/media/cheaps.png'%}" width="150px" height="150px">
+        <p align="center">Cheap and Best</p>
+    </div>
+</div>
 </div>
 {%endblock%}

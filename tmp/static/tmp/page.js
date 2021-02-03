@@ -5,6 +5,9 @@ $('.icon').click(function(){
 $('.king').click(function(){
     $('.togle').hide();
 });
+$('.queen').click(function(){
+    $('.togle').hide();
+});
 // Animation for feedback
    $('#scrleft').click(function(){
         $(".sub5").fadeOut();

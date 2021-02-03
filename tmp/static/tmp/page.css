@@ -38,8 +38,9 @@ body{
     padding-top: 10px;
 }
 .togle{
+    position:relative;
     display: none;
-    background-color:  rgba(116, 224, 224, 1);
+    background-color:  rgb(226, 24, 17);
     z-index: 1;
 }
 .btn1{
