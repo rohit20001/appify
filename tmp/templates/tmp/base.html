@@ -33,6 +33,8 @@
 ::-webkit-scrollbar-thumb:hover {
   background: blue;
 }
+
+
 </style>
     {% block head %} {% endblock %}
     <title>{%block title%} {% endblock %} </title>
@@ -42,16 +44,16 @@
     <div class="nav">
         <div class="logo"><img src="{% static 'tmp/media/Logo.png'%}" alt="logo here" height="90%"></div>
 
-        <a href="{% url 'page1' %}"><button class="btn">Home</button></a>
+        <a  href="{% url 'page1' %}"><button class="btn">Home</button></a>
         <a href="{% url 'courses' %}"><button class="btn">Courses</button></a>
         <a href="{% url 'page2' %}"><button class="btn">Story</button></a>
         <a href="{% url 'blog' %}"><button class="btn">Blogs</button></a>
         <a href="{% url 'projects' %}"><button class="btn">Projects</button></a>
-        <a href="#"><button class="btn">Contact us</button></a>
+        <a href="{% url 'aboutus' %}"><button class="btn">Contact us</button></a>
         <button class="icon"><i class="fas fa-bars"></i></button>
         {% if user.is_authenticated %}
         <a href="{% url 'logout' %}"><button  class="login">LogOut</button></a>
-        <a href="{% url 'signup' %}"><button  class="sign">Dashboard</button></a>
+        <a href="{% url 'profile' %}"><button  class="sign">Dashboard</button></a>
         {% else %}
         <a href="{% url 'login' %}"><button  class="login">Log In</button></a>
         <a href="{% url 'signup' %}"><button  class="sign">Sign Up</button></a>
@@ -63,47 +65,49 @@
             <li><a href="{% url 'page2' %}"><button class="btn1">Story</button></a></li>
             <li><a href="{% url 'blog' %}"><button class="btn1">Blogs</button></a></li>
             <li><a href="{% url 'projects' %}"><button class="btn1">Projects</button></a></li>
-            <li><a href="#"><button class="btn1">Contact Us</button></a></li>
+            <li><a href="{% url 'aboutus' %}"><button class="btn1">Contact Us</button></a></li>
         </div>
     </div>
 
     {% block body %} {%endblock%}
-    <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
+    <div>
+    <div class="svgdesg"><svg style="margin-top: 5%;"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
             <path fill="#368F8B" fill-opacity="1"
                 d="M0,96L60,90.7C120,85,240,75,360,58.7C480,43,600,21,720,21.3C840,21,960,43,1080,48C1200,53,1320,43,1380,37.3L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
                 hellozdmbzdb</path>
                 <div style="background-color:#368F8B;margin-bottom:-1%"></div>
         </svg></div>
+    </div>
     <div class="lower">
         <div class="lowerleft">
             <ul style="margin-left:4rem" class="llist">
                 <li class="lhead"> Courses</li>
-                <li>ahsjhskhoih</li>
-                <li>ahsjhskhoih</li>
-                <li>ahsjhskhoih</li>
-                <li>ahsjhskhoih</li>
+                <a  href="{% url 'courses' %}"><li style="color: white;">C++ and DSA</li></a>
+                <a  href="{% url 'courses' %}"><li style="color: white;">Coding Courses</li></a>
+                <a  href="{% url 'courses' %}"><li style="color: white;">Competitive Courses</li></a>
+                <a  href="{% url 'courses' %}"><li style="color: white;">English</li></a>
+                
             </ul>
             <ul style="margin-left:4rem" class="llist">
                 <li class="lhead">Mock Tests</li>
-                <li>ahsjhskhoih</li>
-                <li>ahsjhskhoih</li>
-                <li>ahsjhskhoih</li>
-                <li>ahsjhskhoih</li>
+                <li style="color: white;">Coming Soon</li>
+                <li style="color: white;">Coming Soon</li>
+                <li style="color: white;">Coming Soon</li>
+                <li style="color: white;">Coming Soon</li>
             </ul>
             <ul style="margin-left:4rem" class="llist">
                 <li class="lhead">Services</li>
-                <li>Blogs</li>
-                <li>Projects</li>
-                <li>Story</li>
-                <li>Trending</li>
+                <a  href="{% url 'blog' %}"><li style="color: white;">Blogs</li></a>
+                <a  href="{% url 'projects' %}"><li style="color: white;">Projects</li></a>
+                <a  href="{% url 'page2' %}"><li style="color: white;">Story</li></a>
+                
 
             </ul>
             <ul style="margin-left:4rem" class="llist">
                 <li class="lhead">Organization</li>
-                <li>ahsjhskhoih</li>
-                <li>ahsjhskhoih</li>
-                <li>ahsjhskhoih</li>
-                <li>ahsjhskhoih</li>
+                <li style="color: white;">CODUTION</li>
+                <a  href="{% url 'aboutus' %}"><li style="color: white;">Contact Us</li></a>
+                
             </ul>
         </div>
         <div style="float:right" class="lowerright">
@@ -122,8 +126,9 @@
         <div style="margin-right:6rem" class="lows">
             Follow us on
             <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
+            <a href="https://instagram.com/codution?igshid=NDk5N2NlZjQ="><i class="fab fa-instagram"></i></a>
             <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin"></i>
         </div>
     </div>
     </div>

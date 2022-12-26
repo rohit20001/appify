@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{% static 'tmp/blog.css' %}">
 <link rel="stylesheet" href="{% static 'tmp/style.css' %}">
 {%endblock%}
-{% block title %} Blogs {%endblock%}
+{% block title %} Codution | Blogs {%endblock%}
 {% block body %}
 <div class="queen">
 <div class="center" class="containerk">
@@ -38,6 +38,7 @@
                         <i class="fab fa-facebook-f"></i>
                         <i class="fab fa-instagram"></i>
                         <i class="fab fa-twitter"></i>
+                        <i class="fab fa-linkedin"></i>
                     </div>
                     <hr class="hrcss100">
                 </div>
@@ -77,14 +78,15 @@
             </div>
 
 
-            <div class="boxHead giveidea"><b>Give Your Ideas</b></div>
+            <div class="boxHead giveidea"><b>Give Your Suggestions</b></div>
             <hr class="hrcss">
-            <form action="#">
+            <form method="post">
+                {% csrf_token %}
                 <input type="name" name="uid1" id="uidName" placeholder="Enter Your name" class="width30"><br><br>
                 <input type="email" name="uid2" id="uidEmail" placeholder="Email" class="width30"><br><br>
-                <textarea rows="4" cols="50" placeholder="Comment here..."></textarea>
+                <textarea name="uid3" rows="4" cols="50" placeholder="Comment here..."></textarea>
                 <br><br>
-                <input type="button" name="submit" id="sub" placeholder="Submit" value="Submit"
+                <input type="submit" name="submit" id="sub" placeholder="Submit" value="Submit"
                     style="background-color:#DDBEA8">
             </form>
 
@@ -94,8 +96,9 @@
             <div class="m4">
                 Follow us on
                 <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-instagram"></i>
+                <a href="https://instagram.com/codution?igshid=NDk5N2NlZjQ="><i class="fab fa-instagram"></i></a>
                 <i class="fab fa-twitter"></i>
+                <i class="fab fa-linkedin"></i>
             </div>
             <div class="boxHead"><b>Trending</b><button class="tbtn" id="tbtn1"><i class="fas fa-sort-down"></i></button></div>
             <hr class="hrcssright">

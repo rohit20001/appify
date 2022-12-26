@@ -1,0 +1,27 @@
+
+{% block head%}{%load static%}
+<style>
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    align-items: center;
+  }
+</style>
+{%endblock%}
+{% block title %} Success {%endblock%}
+{% block body %}
+
+    <div class="center"> <h1>Thanks Your Payment Has been received</h1>
+        <h3>Don't press back button</h3>
+        <p><b>Order Id: </b>{{a.razorpay_payment_id}}</p>
+    <a href="{% url 'home' %}"><button>Click Here !!</button></a>
+    </div>
+    
+   <script>
+    setTimeout(function() {
+        $.get("{% url 'home' %}") // Do something after 5 seconds
+   }, 5000);
+</script> 
+{%endblock%}

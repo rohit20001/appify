@@ -1,0 +1,82 @@
+
+
+{%extends 'tmp/base.html' %}
+{% block head%}
+{% load static %}
+<link rel="stylesheet" href="{% static 'tmp/forms.css' %}">
+<style>
+    .flexbox{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2%;
+        width: 100%;
+    }
+    .setimage{
+        width: 100%;
+        height: 100%;
+    }
+    .purchase{
+        width: 100%;
+        height: auto;
+        margin-left: 5px;
+    }
+    .briefcourse{
+        width: 50%;
+        margin-left: 4%;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .bb11{
+        width: 20%;
+        /* height: 40%; */
+    }
+    .headcc{
+        margin-top: 2%;
+        font-size: 40px;
+        text-decoration: underline;
+    }
+</style>
+{% endblock %}
+{% block title %} Sign Up {% endblock %}
+{% block body %}
+{% for message in messages %}
+      <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong>{{message}}</strong>
+  </div>
+      {% endfor %}
+ <div class="kingform queen">
+    <div class="box_1">
+       <p> Welcome To the Dashboard !!</p>
+        <hr>
+        <form method="post" class="form1">
+            
+           First Name<input type="text" name="first_name" id="f" placeholder= {{ current_user.first_name }} class="sinput" readonly><br>
+            Last Name<input type="text" name="last_name" id="l" placeholder={{ current_user.last_name }} class="sinput" readonly><br>
+            Phone No.<input type="tel" name="phone" id="p" placeholder={{ data }} class="sinput" readonly><br>
+            Username<input type="email" name="email" id="e" placeholder={{ current_user.email }} class="sinput" readonly>
+
+        </form>
+        <hr>
+        <div class="joker">
+            Want to edit Account ? 
+        </div>
+    </div>
+    <div class="purchase">
+        <b><div class="headcc joker">Purcahsed courses:</div></b>
+        {% for purchase in purchased_course %}
+        <div class="flexbox">
+            <div class="bb11">{%load static%}
+                <img class="setimage" src='/media/{{purchase.course.course_image}}'></div>
+            <div class="briefcourse">{{purchase.course_name}}<br>
+            {{purchase.amount}}<br>
+            {{ purchase.purchased_date|date:"F d, Y" }}</div>
+            
+
+        </div>
+        {% endfor %}
+        
+    </div>
+    </div>
+    <div class="filler joker">Any Refund Query<br> Contact Us: 7251035992</div>
+{% endblock %}

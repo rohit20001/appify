@@ -1,6 +1,9 @@
 {%extends 'tmp/base.html' %}
-{% block head%} {%endblock%}
-{% block title %} home {%endblock%}
+{% block head%}
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{%endblock%}
+{% block title %} Codution | Home {%endblock%}
 {% block body %}
     <!----upper container -->
     {% for message in messages %}
@@ -17,15 +20,19 @@
                     <br>
                     <span class="hur">HURRY UP !!</span>
                     <br>
-                    <a href="#" class="mem"> Full Membership Just Rs 100</a>
+                    <a href="#" class="mem"> Full Membership Just Rs 1000</a>
                 </div>
                 <div class="detail3">
-                    <h1>Book now</h1>
-                    <form action="#">
-                        <input type="text" name="" id="" placeholder="email id">
-                        <input type="text" name="" id="" placeholder="contact no.">
-                        <input type="text" name="" id="" placeholder="DOB"><br>
-                        <input type="submit" name="" id="" value="Submit">
+                    <h2>Book now Free Classes</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        Name:&nbsp;&nbsp;&nbsp; <input type="text" name="name" id="na" placeholder="Name"><br>
+                        Email:&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="email" id="semail" placeholder="email id"><br>
+                        Subject: <input type="text" name="sub" id="sub" placeholder="Subject"><br>
+                        Contact: <input type="tel" name="contact" id="scon" placeholder="contact no."><br>
+                        DOB:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="date" name="dob" id="sdob" placeholder="DOB"><br>
+                        <!-- {% csrf_token %} -->
+                        <input type="submit" name="signup" id="ssp" value="Submit">
                     </form>
                 </div>
             </div>
@@ -47,69 +54,68 @@
         </svg>
     </div>
     <div class="middle">
-        <div style="margin-top:1rem" class="head1">
-            Some Text About Courses
+        <div class="head1">
+           <u style="font-size: 30px;">Read Once!! Before moving forward</u>
         </div>
         <div class="head2">
             <div class="sub">
-                Some Text About Courses Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores reiciendis
-                sit saepe error. Facere, dolores. Consectetur, dolorum! Labore a aliquam earum provident, molestias
-                repudiandae, quis voluptatum, magni accusamus quam nostrum
+                “Whether we’re fighting climate change or going
+                 to space, everything is moved forward by computers,
+                  and we don’t have enough people who can code.
+                   Teaching young people to code early on can help 
+                   build skills and confidence and energize the classroom with learning-by-doing opportunities.”<br>
+                   <b>BY:- Richard Branson, Founder, Virgin Group</b>
             </div>
             <div class="sub">
-                Some Text About Courses Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores reiciendis
-                sit saepe error. Facere, dolores. Consectetur, dolorum! Labore a aliquam earum provident, molestias
-                repudiandae, quis voluptatum, magni accusamus quam nostrum
+                It is a strong tool that helps to get ahead in life. For being motivated we need a driving tool or goal that keeps us motivated and moves forward. Also, it helps in being progressive both physically and mentally.
+
+Moreover, your goal does not be to big and long term they can be small and empowering. Furthermore, you need the right mindset to be motivated.
+
             </div>
             <div class="sub">
-                Some Text About Courses Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores reiciendis
-                sit saepe error. Facere, dolores. Consectetur, dolorum! Labore a aliquam earum provident, molestias
-                repudiandae, quis voluptatum, magni accusamus quam nostrum
+                A teacher has a major contribution in making the future of a child. From play group to graduation, I have changed many Schools and Colleges and thus it is obvious that I have encountered with different types of teachers. Some of them were very friendly and some were very strict, some only scolded us on our mistakes whereas some punished us severely.
             </div>
         </div>
 
         <div class="head3">
-            <div class="sub1 sub2">
-                <span class="MP">
+            <div  class="sub2 sub1">
+                <span  class="MP">
                     {%load static%}
-                    <img src="{% static 'tmp/media/Run__001.png' %}" alt="Motivational picture">
+                    <img src="{% static 'tmp/media/books.jfif' %}" alt="Motivational picture">
                 </span>
             </div>
             <div class="sub1 sub3">
-                <h1 style="margin-top:50px">Motivational Heading</h1><br><br>
-                <p style="margin-top:-20px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                    necessitatibus nesciunt, eos ipsa
-                    od
-                    io itaque facilis. Sed ipsam neque culpa expedita, autem, sint voluptatem quia iure nam dolorem
-                    omnis molestiae?</p>
-                <br><br>
-                <p style="margin-bottom:180px">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, saepe
-                    qui corporis, architecto
-                    quibusdam facere
-                    dolorem ullam impedit rerum asperiores earum ut autem, voluptas cumque. Nobis necessitatibus
-                    voluptatibus fugit ab!
-                    <br><br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptatum sapiente iure
-                    consequuntur delectus, eligendi assumenda, cupiditate eos harum, expedita vel at deleniti ipsa
-                    dolorem! Quis, similique asperiores. Quasi, accusamus.
+                <u><h1 >About Books !!</h1><br><br></u>
+                <p style="margin-top:-20px">Books are those mirrors that reflect ourmind. Without books house is like without the room. windows.
+                     Books are those things whom the scholar understands the treasure of knowledge.
+                      </p>
+                <br>
+                <p >Books are our faithfull and best friends. Books are like a sea and these are fulfilled with
+                    concepts, thoughts and new ideas. Literature is the mirror of society, culture and visualise civilization.
+                    Books have the solutions to every problem and are the best friends who will never leave anyone. Reading books from various genres helps us think and analyse in various ways.
+                    It is no news that books are a great source of entertainment as there are many kinds of readers, who are a fan of books like novels, poetry books, short stories, magazines, comics, etc. Sometimes reading also becomes an addiction, but in my opinion, it is a good kind of addiction that will only be beneficial for an individual.
+                    <br>
+                    <b>Literature Can not go forward without books.</b>
                 </p>
             </div>
         </div>
-        <h1>Feedbacks</h1>
+        <h3 style="margin-left:30%">What Makes Us Different From Others!</h3>
         <div class="head5">
-            <button class="scrbtn" id="scrleft"> <i class="fas fa-angle-left"></i></button>
+            <!-- <button class="scrbtn" id="scrleft"> <i class="fas fa-angle-left"></i></button> -->
             <div class="dsub5">
-                <span class="sub5">feedback 1 <br> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea
-                    ab quasi illum nam hic libero eveniet
+                <span class="sub5"><b><u>About Tutors</u></b> <br>
+                    This platform is amazing, Here we learns from the professionals which are doing work in their fields 
+                    , They teaches us from their platforms where they works. 
                 </span>
             </div>
-            <div class="dsub5"><span class="sub5">feedback 2 <br> Lorem ipsum dolor sit, amet consectetur
-                    adipisicing elit. Ea ab quasi illum nam hic libero eveniet
+            <div class="dsub5"><span class="sub5"><b><u>Regular Student Checks</u></b><br>
+                 Our cordinaters will regularly check at your homes for any problems, We will help how to handle websites
+                 and attending online meetings. 
                 </span></div>
-            <div class="dsub5"><span class="sub5">feedback 3 <br> Lorem ipsum dolor sit, amet consectetur
-                    adipisicing elit.
+            <div class="dsub5"><span class="sub5"><b><u>Truth !!</u></b> <br> 
+                The Truth !! Technology is everywhere in this world, But no one is using it properly, We will teach you how to use these technology optimally.
                 </span></div>
-            <button class="scrbtn" id="scrright"><i class="fas fa-angle-right"></i></button>
+            <!-- <button class="scrbtn" id="scrright"><i class="fas fa-angle-right"></i></button> -->
         </div>
     </div>
 

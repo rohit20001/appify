@@ -3,7 +3,7 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'tmp/forms.css' %}">
 {% endblock %}
-{% block title %} Sign Up {% endblock %}
+{% block title %} Codution | Sign Up {% endblock %}
 {% block body %}
 {% for message in messages %}
       <div class="alert">
@@ -17,18 +17,18 @@
         <hr>
         <form method="post" class="form1">
             {% csrf_token %}
-            <input type="text" name="first_name" id="f" placeholder="First Name" class="sinput">
-            <input type="text" name="last_name" id="l" placeholder="Last Name" class="sinput">
-            <input type="tel" name="phone" id="p" placeholder="Phone" class="sinput">
-            <input type="email" name="email" id="e" placeholder="Email" class="sinput">
-            <input type="password" name="password1" id="ps" placeholder="Password" class="sinput"><br>
-            <input type="password" name="password2" id="psa" placeholder="Re-enter Password" class="sinput"><br>
-            {% csrf_token %}
+            <input type="text" name="first_name" id="f" placeholder="First Name" class="sinput" required>
+            <input type="text" name="last_name" id="l" placeholder="Last Name" class="sinput" required>
+            <input type="tel" name="phone" id="p" placeholder="Phone" class="sinput" required>
+            <input type="email" name="email" id="e" placeholder="Email" class="sinput" required>
+            <input type="password" name="password1" id="ps" placeholder="Password" class="sinput" required><br>
+            <input type="password" name="password2" id="psa" placeholder="Re-enter Password" class="sinput" required><br>
+            <!-- {% csrf_token %} -->
             <input type="submit" name="signup" id="sp" value="Sign Up" class="sinputbtn sinput">
         </form>
         <hr>
         <div class="joker">
-            Already have account? <a href=""> Log In </a>
+            Already have account? <a href="{% url 'login' %}"> Log In </a>
         </div>
     </div>
     </div>

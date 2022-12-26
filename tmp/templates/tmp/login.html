@@ -3,7 +3,7 @@
 {% load static%}
 <link rel="stylesheet" href="{%static 'tmp/forms.css' %}"> 
 {%endblock%}
-{% block title %} Sign Up {%endblock%}
+{% block title %} Codution | Login {%endblock%}
 {% block body %}
 {% for message in messages %}
       <div class="alert">
@@ -23,7 +23,7 @@
         </form>
         <hr>
         <div class="joker">
-            don't have account? <a href=""> Sign Up </a>
+            don't have account? <a href="{% url 'signup' %}"> Sign Up </a>
         </div>
     </div>
     </div>

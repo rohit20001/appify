@@ -1,7 +1,10 @@
 svg{z-index: 1}
 *{
     font-size: 20px;
+    
 }
+
+
 body{
     background-color: white;
     width: 100%;
@@ -37,10 +40,11 @@ body{
     padding-bottom: 10px ;
     padding-top: 10px;
 }
+
 .togle{
     position:relative;
     display: none;
-    background-color:  rgb(226, 24, 17);
+    background-color:  rgb(246, 192, 112);
     z-index: 1;
 }
 .btn1{
@@ -88,7 +92,7 @@ button:hover{
     opacity:0.75;
     margin: 0;
     width: 100%;
-    height: 30rem;
+    height: auto;
     animation: upperanimation 5s linear 2s infinite normal both;
 }
 @keyframes upperanimation{
@@ -179,13 +183,13 @@ button:hover{
     height: auto;
 }
 .head1, .sub{
-    border-style: solid;
-    border-width: 1px;
+    
     height: auto;
     text-align: center;
 }
 .head1{
     display: block;
+    font-size: 40px;
     width: 50%;
     margin: auto;
     margin-top:-10%;
@@ -196,6 +200,7 @@ button:hover{
     padding-left:7%;
     padding-right:7%;
     padding-top:4%;
+    background-color: linen;
 
 
 }
@@ -208,13 +213,18 @@ button:hover{
 }
 .head3{
     display: block;
+    height: auto;
+    margin-top: 8%;
+    margin-bottom: 4%;
 }
 .sub1{
     display: inline-block;
     text-align: center;
+    
 
 }
 .sub2{
+    margin-top: -80%;
     width: 45%;
     background-image: radial-gradient(circle 15vh at 16vh 15vh,rgba(118, 73, 223, 0.836)95%,transparent),radial-gradient(circle 27vh at 31vh,rgba(218, 142, 99, 0.781) 95% , transparent );
 }
@@ -225,10 +235,15 @@ button:hover{
 }
 .MP img{
     border-style: solid;
+    border-radius: 10%;
     width:65%;
     height: auto;
     margin-left:2%;
-    margin-top:4%;
+    margin-top:-50%;
+}
+.MP{
+    margin-top:-50%;
+    
 }
 
 .head4{
@@ -243,8 +258,9 @@ button:hover{
 }
 .dsub5{
     margin: 2% 5%;
+    text-align: center;
     display: inline-block;
-    height: 100px;
+    border-radius: 10%;
     height: 250px;
     width: 20%;
     background-color: linen;
@@ -255,9 +271,22 @@ button:hover{
     color: white;
 }
 @media only screen and (max-width: 650px) {
+    .cc{
+        font-size: 40px;
+    }
+    .hur{
+        font-size: 25px;
+    }
     .detail2{
         display: block;
         width: 100%;
+    }
+    .detail3{
+        margin-top: 8%;
+        width: 100%;
+    }
+    .detail3 input{
+        width: 60%;
     }
     .list1{
     width: 100%;
@@ -288,7 +317,7 @@ button:hover{
     .head5{
         display: block;
         width: 100%;
-        height: 20vh%;
+        height: 20vh;
         overflow: auto;
     }
     .dsub5{
@@ -302,6 +331,7 @@ button:hover{
 .lower{
     display: block;
     background-color: #368F8B;
+    
 }
 .lhead{
     list-style: none;
@@ -311,16 +341,36 @@ button:hover{
 .llist{
     display: inline-block;
 }
+.lower a::before{
+    text-decoration: none;
+    color: black;
+}
 .llist li{
     list-style: none;
+    color: black;
 }
 .lowerright, .lowerleft{
     display: inline-block;
 }
+
 @media only screen and (max-width: 650px){
     .llist,.lowerright,.lowerleft{
         display: block;
     }
+    .svgdesg{
+        display: none;
+    }
+    .lower{
+        margin-top: 8%;
+    }
+    .lowerright{
+        margin-right: 50%;
+        
+    }
+    
+}
+.lowerright b{
+    font-size: 10px;
 }
 .lowerright{
     width:20%;
@@ -330,6 +380,7 @@ button:hover{
 }
 .llf{
     display: block;
+    
 }
 .lf,.lows{
     display: inline-block;
@@ -337,3 +388,4 @@ button:hover{
 .lows{
     float: right;
 }
+
