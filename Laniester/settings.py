@@ -26,7 +26,7 @@ SECRET_KEY = 'l3*_&dm*(&%@8i*1=n1g_n-$6pkv4$!v2!i!4cel3&t7sz0fk5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.0.108",'127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -89,7 +89,7 @@ DATABASES={
       'ENGINE':'django.db.backends.postgresql_psycopg2',
       'NAME':'postgres',
       'USER':'postgres',
-      'PASSWORD':'Kulvir#12',
+      'PASSWORD':'Rohit@2001',
       'HOST':'localhost',
       'PORT':'5432',
    }
@@ -132,6 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 MEDIA_ROOT= os.path.join(BASE_DIR, "media")
 MEDIA_URL="/media/"
 STATICFILES_DIRS = [

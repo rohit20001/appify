@@ -5,10 +5,12 @@ from django.contrib.auth.models import User
 
 
 class extendedUser(models.Model):
+    id = models.AutoField(primary_key=True)
     phone = models.CharField(max_length=11)
     email = models.CharField(max_length=50)
 
 class Post(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100)
     content_upper_para = RichTextField()
     content_lower_para = RichTextField(default="")
@@ -19,6 +21,7 @@ class Post(models.Model):
     aboutAuthor = models.CharField(max_length=1000,default="")
 
 class Project(models.Model):
+    id = models.AutoField(primary_key=True)
     head = models.CharField(max_length=100)
     content = RichTextField(max_length=5000)
     posted_date_project = models.DateTimeField(auto_now_add=True)
@@ -26,6 +29,7 @@ class Project(models.Model):
     projectImage = models.ImageField(upload_to="blog/images",default="")
 
 class New_Student(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     email = models.EmailField(max_length=150)
     sub = models.CharField(max_length=50)
@@ -34,6 +38,7 @@ class New_Student(models.Model):
     When_contacted = models.DateTimeField(auto_now_add=True)
 
 class Course(models.Model):
+    id = models.AutoField(primary_key=True)
     course_name = models.CharField(max_length=100)
     course_teacher = models.CharField(max_length=100)
     Features_of_courses = RichTextField(default="")
@@ -44,6 +49,7 @@ class Course(models.Model):
     aboutTeacher = models.CharField(max_length=1000,default="")
 
 class Paid_Student(models.Model):
+    id = models.AutoField(primary_key=True)
     username = models.EmailField(max_length=150)
     name = models.CharField(max_length=150)
     course = models.ForeignKey(Course, on_delete=models.CASCADE, null=True)
@@ -54,6 +60,7 @@ class Paid_Student(models.Model):
     purchased_date = models.DateTimeField(auto_now_add=True)
 
 class Story(models.Model):
+    id = models.AutoField(primary_key=True)
     story_image = models.ImageField(upload_to="story/images",default="")
     brief_content = RichTextField(default="")
     story_by = models.CharField(max_length=100)
